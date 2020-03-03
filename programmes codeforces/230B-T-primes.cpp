@@ -1,4 +1,4 @@
-// Name: num of divisor
+		// Name: T-primes
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -38,31 +38,22 @@ using namespace std;
 
 #define pt printf(" * \n")
 
-const double pie = 2 * acos(0.0);
-const long long mxl = 1000000007;
+const double pie= 2*acos(0.0);
+const long long mxl= 1000000007;
 
-template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
+template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 
-template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
-
-
+template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 
 vector<ulli>vPrime;
-
-
+ bitset<10000000>arr;
 void seive()
-
 {
-    ulli n = 1000000;
+    ulli n = 10000000;
 //suf(n);
-    bitset<10000000>arr;
-
+   
     arr.flip();
     arr[1] = 0;
-
-
-
-
     for (ulli p = 2; p * p <= n; p++)
     {
         if (arr[p])
@@ -74,7 +65,6 @@ void seive()
         }
     }
 // parray(arr,arr+(n+1));
-
     for (ulli p = 1; p <= n; p++)
     {
         if (arr[p])
@@ -82,92 +72,74 @@ void seive()
             vPrime.pb(p);
 //puf(p);nl;
         }
-
     }
+}
 
 
+int perfect( ulli nm)
+{
+	double tmp=sqrt(nm);
+
+	if(tmp==int(tmp))
+	return 1;
+	else
+		return 0;
 }
 
 
 int main()
 {
-    seive();
+	seive();
+	ulli t,n;
+	suf(t);
+
+	for(ulli i=0;i<t;i++)
+	{
+		suf(n);
+		if(n==4)pf("YES");
+		else if(n%2==0)pf("NO");
+		else 
+		{
+			ulli tmpS=sqrt(n);
+ // puf(tmpS);pt;
+ // cout<<(arr[tmpS]);nl;
+			if(perfect(n)&&arr[tmpS])
+				pf("YES");
+			else
+				pf("NO");
+
+		}
+nl;
+	}
 
 
+	
 
-    int input;
-
-    sif(input);
-
-    int Divisor[input+1] = {0};
-//vector<int >uniqueDivisor;
-
-    vector<int> vDivisors;
-
-    int tmpIn = input;
-
-
-    int ans = 1;
-    for (int i = 0; vPrime[i] <= input;  )
-    {
-        if (tmpIn % vPrime[i] == 0)
-        {
-            Divisor[vPrime[i]]++;
-
-          //   pif(vPrime[i]);nl;
-            // vDivisors.pb(vPrime[i]);
-
-
-            tmpIn /= vPrime[i];
-        }
-        else
-        {
-
-            ans = ans * (Divisor[vPrime[i]] + 1);
-
-
-            i++;
-//pif(ans);pt;
-        }
-
-
-    }
-
-
-
-
-
-
-    pif(ans);
-
-
-
-
-    return 0;
+	return 0;
 }
 
 /*
-    Documentation
-
+	Documentation
+	
 */
 
 
-/* Assign vector
-    vector<int> v;
+/* Assign vector 
+    vector<int> v; 
+  
+     fill the array with 10 five times 
+    v.assign(5, 10); 
 
-     fill the array with 10 five times
-    v.assign(5, 10);
-
-     // inserts 5 at the beginning
+     // inserts 5 at the beginning 
     v.insert(v.begin(), 5);
 
 
-    // removes the first element
-    v.erase(v.begin());
+    // removes the first element 
+    v.erase(v.begin());  
 
-       // erases the vector
+       // erases the vector 
     v.clear();
 
-     // inserts at the beginning and extends the vector
-    v.emplace(v.begin(), 5);
+     // inserts at the beginning and extends the vector 
+    v.emplace(v.begin(), 5); 
 */

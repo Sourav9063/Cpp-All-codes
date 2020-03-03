@@ -1,4 +1,4 @@
-// Name: num of divisor
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -45,109 +45,90 @@ template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;
 
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
-
-
 vector<ulli>vPrime;
 
-
 void seive()
-
 {
-    ulli n = 1000000;
+	ulli n = 100000;
 //suf(n);
-    bitset<10000000>arr;
-
-    arr.flip();
-    arr[1] = 0;
-
-
-
-
-    for (ulli p = 2; p * p <= n; p++)
-    {
-        if (arr[p])
-        {
-            for (ulli i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
+	bitset<10000000>arr;
+	arr.flip();
+	arr[1] = 0;
+	for (ulli p = 2; p * p <= n; p++)
+	{
+		if (arr[p])
+		{
+			for (ulli i = p * p; i <= n; i += p)
+			{
+				arr[i] = 0;
+			}
+		}
+	}
 // parray(arr,arr+(n+1));
-
-    for (ulli p = 1; p <= n; p++)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
+	for (ulli p = 1; p <= n; p++)
+	{
+		if (arr[p])
+		{
+			vPrime.pb(p);
 //puf(p);nl;
-        }
-
-    }
-
-
+		}
+	}
 }
+
 
 
 int main()
 {
-    seive();
+	seive();
+
+	int input;
+	sif(input);
+	vector<int> vDivisors;
+	int Divisor[input + 1] = {0};
+	int tmpIn = input;
+	bool unique = true;
+	for (int i = 0; vPrime[i] <= input;  )
+	{
+
+		if (tmpIn % vPrime[i] == 0)
+		{
+			Divisor[vPrime[i]]++;
+
+			if (unique)
+			{
+				vDivisors.pb(vPrime[i]);
+				unique = false;
+			}
+// cout<<vPrime[i]<<endl;pt;
+			tmpIn /= vPrime[i];
+		}
+		else
+		{
+			unique = true;
+
+			i++;
+		}
 
 
-
-    int input;
-
-    sif(input);
-
-    int Divisor[input+1] = {0};
-//vector<int >uniqueDivisor;
-
-    vector<int> vDivisors;
-
-    int tmpIn = input;
-
-
-    int ans = 1;
-    for (int i = 0; vPrime[i] <= input;  )
-    {
-        if (tmpIn % vPrime[i] == 0)
-        {
-            Divisor[vPrime[i]]++;
-
-          //   pif(vPrime[i]);nl;
-            // vDivisors.pb(vPrime[i]);
-
-
-            tmpIn /= vPrime[i];
-        }
-        else
-        {
-
-            ans = ans * (Divisor[vPrime[i]] + 1);
-
-
-            i++;
-//pif(ans);pt;
-        }
-
-
-    }
-
+	}
+	ulli ans = input;
+	for (int i = 0; i < vDivisors.size(); i++)
+	{
+		cout << vDivisors[i]; pt;
+		ans *= (vDivisors[i] - 1);
+		ans /= vDivisors[i];
 
 
 
 
+	}
 
-    pif(ans);
-
-
-
-
-    return 0;
+	puf(ans); nl;
+	return 0;
 }
 
 /*
-    Documentation
+	Documentation
 
 */
 
