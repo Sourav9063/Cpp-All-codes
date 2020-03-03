@@ -114,7 +114,7 @@ int main()
 	ulli ans = input;
 	for (int i = 0; i < vDivisors.size(); i++)
 	{
-		cout << vDivisors[i]; pt;
+		//cout << vDivisors[i]; pt;
 		ans *= (vDivisors[i] - 1);
 		ans /= vDivisors[i];
 
