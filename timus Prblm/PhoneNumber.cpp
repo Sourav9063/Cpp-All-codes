@@ -1,4 +1,4 @@
-    // Name: reverse root
+// Name: PhoneNumber
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -38,49 +38,44 @@ using namespace std;
 
 #define pt printf(" * \n")
 
-const double pie= 2*acos(0.0);
-const long long mxl= 1000000007;
+const double pie = 2 * acos(0.0);
+const long long mxl = 1000000007;
 
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
+template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
+template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
 
 
 int main()
 {
-  lli a,b;
-  slf(a);slf(b);
-
-  plf(a+b+67);nl;
 
 
-  return 0;
-
+	return 0;
 }
 
 /*
-  Documentation
-  
+	Documentation
+
 */
 
 
-/* Assign vector 
-    vector<int> v; 
-  
-     fill the array with 10 five times 
-    v.assign(5, 10); 
+/* Assign vector
+    vector<int> v;
 
-     // inserts 5 at the beginning 
+     fill the array with 10 five times
+    v.assign(5, 10);
+
+     // inserts 5 at the beginning
     v.insert(v.begin(), 5);
 
 
-    // removes the first element 
-    v.erase(v.begin());  
+    // removes the first element
+    v.erase(v.begin());
 
-       // erases the vector 
+       // erases the vector
     v.clear();
 
-     // inserts at the beginning and extends the vector 
-    v.emplace(v.begin(), 5); 
+     // inserts at the beginning and extends the vector
+    v.emplace(v.begin(), 5);
 */
