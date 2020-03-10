@@ -1,4 +1,4 @@
-// Name: sum of divisors
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -11,6 +11,7 @@ using namespace std;
 #define sf scanf
 #define nl printf("\n")
 #define plf(a) printf("%lld",a)
+
 #define slf(b) scanf("%lld",&b)
 #define puf(a) printf("%llu",a)
 #define suf(b) scanf("%llu",&b)
@@ -45,101 +46,38 @@ template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;
 
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
-vector<ulli>vPrime;
-
-void seive()
-{
-    ulli n;
-
-    n = 100000 ;
-//suf(n);
-    bitset<10000000>arr;
-
-    arr.flip();
-    arr[1] = 0;
-
-
-    for (ulli p = 2; p * p <= n; p++)
-    {
-        if (arr[p])
-        {
-            for (ulli i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-// parray(arr,arr+(n+1));
-
-    for (ulli p = 1; p <= n; p++)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-            //puf(p); nl;
-        }
-    }
-
-}
 
 
 int main()
 {
-    seive();
-    int input;
-    sif(input);
-    int  divisorPower[input + 1] = {0};
-    int sumOfDivisor = 1;
-    int oneSum = 1;
+	int n, brLeft = 0, brRight = 0;
+	int flag = 0;
+	string s;
+	int ans = 0;
+	sif(n);
+	cin >> s;
+	fr(n)
+	{
+		if (s[i] == '(') {brLeft++; flag++;}
+		else
+		{brRight++; flag--;}
 
-    vector<int>vDivisor;
-    int tmpIn = input;
+		if (flag < 0 || (flag == 0 && s[i] == '('))ans++;
+	}
 
+	if (brRight != brLeft)
+		pf("-1");
+	else
+		pif(ans);
 
-    for (int i = 0; vPrime[i] <= input;)
-    {
-
-        if (tmpIn % vPrime[i] == 0)
-        {
-            divisorPower[vPrime[i]]++;
-
-            //  vDivisor.pb(vPrime[i]);
-            tmpIn /= vPrime[i];
-
-
-            oneSum += pow(vPrime[i], divisorPower[vPrime[i]]);
-
-            //pif(oneSum);pt;
-        }
-
-        else
-        {
-
-
-            sumOfDivisor *= oneSum;
-
-            oneSum = 1;
-
-            i++;
-        }
-
-
-
-    }
-
-    pif(sumOfDivisor);
-
-
-
-
-
-
-    return 0;
+	nl;
+	return 0;
 }
 
 /*
-    Documentation
-    seive
+	Documentation
+	koyta unusual
+
 */
 
 

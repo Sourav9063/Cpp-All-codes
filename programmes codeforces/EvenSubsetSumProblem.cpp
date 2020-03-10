@@ -1,4 +1,4 @@
-// Name: sum of divisors
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -45,101 +45,100 @@ template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;
 
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
-vector<ulli>vPrime;
-
-void seive()
-{
-    ulli n;
-
-    n = 100000 ;
-//suf(n);
-    bitset<10000000>arr;
-
-    arr.flip();
-    arr[1] = 0;
-
-
-    for (ulli p = 2; p * p <= n; p++)
-    {
-        if (arr[p])
-        {
-            for (ulli i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-// parray(arr,arr+(n+1));
-
-    for (ulli p = 1; p <= n; p++)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-            //puf(p); nl;
-        }
-    }
-
-}
 
 
 int main()
 {
-    seive();
-    int input;
-    sif(input);
-    int  divisorPower[input + 1] = {0};
-    int sumOfDivisor = 1;
-    int oneSum = 1;
+	int t;
+	sif(t);
+	while (t--)
+	{
+		int even = 0, odd = 0, evenMax = 0, oddMax = 0;
+		int lenth=0,flagEven=0;
+		int n;
+		sif(n);
+		int arr[n];
+		for (int i = 0; i < n; i++)
+		{
+			sif(arr[i]);
 
-    vector<int>vDivisor;
-    int tmpIn = input;
+		// 	if (arr[i] % 2)
+		// 	{	//odd;
+		// 		odd++;
+		// 		evenMax = max(even, evenMax);
+		// 		even = 0;
+		// 	}
+		// 	else
+		// 	{	//even
+		// 		even++;
+		// 		oddMax = max(odd, oddMax);
+		// 		odd = 0;
+		// 	}
+		// }
+
+		// if (n == 1)
+		// {
+		// 	if (odd) {
+		// 		pf("-1");
+		// 	}
+		// 	else
+		// 	{
+		// 		pf("1");
+		// 	}
+
+		// }
+		// else if (n == 2)
+		// {
+		// 	if (odd && even) {
+		// 		pf("-1");
+		// 	}
+		// 	else
+		// 	{
+		// 		pf("2");
+		// 	}
+		// }
+		// else
+		// {	if (even == 0)
+		// 		pf("2");
+		// 	else 
+		// 		pf("1");
+
+		// 	}
+
+			if(arr[i]%2==0)
+			{
+				flagEven=1;
+				lenth=i;
+			}
+		}
+
+if(flagEven)
+{
+	pf("1");nl;pif(lenth+1);
+}
+else if(n>1)
+{
+	pf("2");nl;
+	pf("1 2");
+}
+else{
+	pf("-1");
+}
 
 
-    for (int i = 0; vPrime[i] <= input;)
-    {
-
-        if (tmpIn % vPrime[i] == 0)
-        {
-            divisorPower[vPrime[i]]++;
-
-            //  vDivisor.pb(vPrime[i]);
-            tmpIn /= vPrime[i];
 
 
-            oneSum += pow(vPrime[i], divisorPower[vPrime[i]]);
-
-            //pif(oneSum);pt;
-        }
-
-        else
-        {
+		nl;
+	}
 
 
-            sumOfDivisor *= oneSum;
-
-            oneSum = 1;
-
-            i++;
-        }
-
-
-
-    }
-
-    pif(sumOfDivisor);
-
-
-
-
-
-
-    return 0;
+	return 0;
 }
 
 /*
-    Documentation
-    seive
+	Documentation
+	any ans is acceptable
+
 */
 
 
