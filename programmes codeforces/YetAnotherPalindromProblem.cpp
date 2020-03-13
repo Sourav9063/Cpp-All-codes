@@ -57,63 +57,25 @@ int main()
 		sif(n);
 		int arr[n];
 		int flag = 0;
-		int flagJ = 1;
-		fr(n)
+		sarray(arr, arr + n);
+
+		fr(n - 1)
 		{
-			sif(arr[i]);
-
-		}
-		for (int i = 0; i < n; i++)
-		{
-			if (arr[i] == arr[i + 2])
+			for (int j = i + 2; j < n; j++)
 			{
-				// pif(i);
-				// pt;
-				flag = 1;
-				break;
-			}
-
-			if (arr[i] == arr[i + 1])
-			{
-				// int j = i + i;
-				// while (arr[i] == arr[j])
-				// {
-				// 	j++;
-				// 	if (j == n - 1)
-				// 	{
-				// 		flagJ = 0;
-				// 		break;
-				// 	}
-				// 	//pif(j); pt;
-				// }
-
-				// if (flagJ)
-				// {	if (arr[i - 1] == arr[j])
-				// 	{
-				// 		//pif(arr[i - 1]); pif(arr[j]);
-				// 		flag = 1;
-				// 		break;
-				// 	}
-				// }
-				if (arr[i + 1] == arr[i + 2])
+				if (arr[i] == arr[j])
 				{
 					flag = 1;
 					break;
-
 				}
-				else	if (arr[i - 1] == arr[i + 2])
-				{
-					flag = 1;
+				if (flag)
 					break;
-
-				}
-
-
-
-
-
+				else
+					continue;
 			}
 		}
+
+
 
 		if ( flag)pf("YES");
 		else
