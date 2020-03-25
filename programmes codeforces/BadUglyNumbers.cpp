@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Bad Ugly Numbers
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -55,66 +55,31 @@ int main()
 	{
 		int n;
 		sif(n);
-
 		if (n == 1)
-		{
-
-
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
+			pf("-1");
 		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
+		{
+			pf("2");
+			n--;
+			while (n--)
 			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
+				pf("3");
 			}
 		}
+
 		nl;
 	}
-
 
 	return 0;
 }
 
 /*
 	Documentation
-	odd ones
-	all same ones
-
+	normal
+	23
+	233
+	2333
+	23333
 */
 
 

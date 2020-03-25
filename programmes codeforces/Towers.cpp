@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Towers
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,71 +49,48 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
+	int n;
+	sif(n);
+	int arr[n];
+	int numOfTower = 0;
+	int highestTower = 1;
+	sarray(arr, arr + n);
+	sort(arr, arr + n);
+
+	for (int i = 0; i < n;)
 	{
-		int n;
-		sif(n);
-
-		if (n == 1)
+		if (arr[i] == arr[i + 1])
 		{
+			int tmp = 1;
+			int j = i + 1;
+			while (arr[i] == arr[j])
+			{
+				tmp++;
+				j++;
+				//		pt;
+			}
+			//	nl;
+			highestTower = max(highestTower, tmp);
+			//	pif(highestTower);
+			i = j;
+			numOfTower++;
 
-
-			int ar;
-			sif(ar);
-			pf("YES");
 		}
 		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
-			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
-			}
+		{
+			i++;
+			numOfTower++;
 		}
-		nl;
 	}
 
+	pif(highestTower); pf(" ");
+	pif(numOfTower); nl;
 
 	return 0;
 }
 
 /*
 	Documentation
-	odd ones
-	all same ones
 
 */
 

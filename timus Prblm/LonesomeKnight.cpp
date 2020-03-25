@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -53,58 +53,24 @@ int main()
 	sif(t);
 	while (t--)
 	{
-		int n;
-		sif(n);
-
-		if (n == 1)
+		char in;
+		int num;
+		sf("%c", &in);
+		sif(num);
+		pif(num);
+		pf("%c", in);
+		nl;
+		if ((in >= 'c' && in <= 'f') && (num >= 3 && num <= 6))
 		{
-
-
-			int ar;
-			sif(ar);
-			pf("YES");
+			pf("8"); nl;
 		}
 		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
-			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
-			}
+		{
+			//pt;
 		}
-		nl;
+
 	}
+
 
 
 	return 0;
@@ -112,8 +78,7 @@ int main()
 
 /*
 	Documentation
-	odd ones
-	all same ones
+	manually kortesi
 
 */
 

@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Vasya the Hipster
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,72 +49,30 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
+	int a, b;
+	s2f(a, b);
+	int mn = min(a, b);
+	int mx;
+	//int flag=a-b;
+	if (a - b == 0)
 	{
-		int n;
-		sif(n);
+		mx = 0;
 
-		if (n == 1)
-		{
-
-
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
-		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
-			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
-			}
-		}
-		nl;
+	}
+	else
+	{
+		mx = abs(a - b) / 2;
+		//pt;
 	}
 
+	pif(mn); pf(" "); pif(mx);
 
 	return 0;
 }
 
 /*
 	Documentation
-	odd ones
-	all same ones
-
+	normal implementation
 */
 
 

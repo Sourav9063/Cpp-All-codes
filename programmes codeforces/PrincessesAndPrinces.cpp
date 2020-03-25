@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Princesses and Princes
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -44,6 +44,35 @@ const long long mxl = 1000000007;
 template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
+// vector<ulli>vPrime;
+
+// void seive()
+// {
+//     ulli n = 100000;
+// //suf(n);
+//     bitset<10000000>arr;
+//     arr.flip();
+//     arr[1] = 0;
+//     for (ulli p = 2; p * p <= n; p++)
+//     {
+//         if (arr[p])
+//         {
+//             for (ulli i = p * p; i <= n; i += p)
+//             {
+//                 arr[i] = 0;
+//             }
+//         }
+//     }
+// // parray(arr,arr+(n+1));
+//     for (ulli p = 1; p <= n; p++)
+//     {
+//         if (arr[p])
+//         {
+//             vPrime.pb(p);
+// //puf(p);nl;
+//         }
+//     }
+// }
 
 
 
@@ -56,55 +85,45 @@ int main()
 		int n;
 		sif(n);
 
-		if (n == 1)
-		{
+		int flag_arr[n + 1] = {0};
 
-
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
-		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
-			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
+		int flag = 0, dauhter = 0;
+		for (int i = 1; i <= n; i++) {
+			int k, marry = 1;
+			int tmpK;
+			sif(k);
+			while (k--) {
+				sif(tmpK);
+				if (marry) {
+					if (!flag_arr[tmpK]) {
+						flag_arr[tmpK] = 1;
+						marry = 0;
 					}
 				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
+			}
+			if (marry)if (!dauhter)dauhter = i;
+		}
+		if (dauhter) {
+			pf("IMPROVE"); nl;
+			pif(dauhter); pf(" ");
+			for (int i = 1; i <= n; i++)
+			{
+				if (!flag_arr[i])
+				{
+					pif(i);
+					break;
+				}
+
 			}
 		}
+		else
+		{
+			pf("OPTIMAL");
+		}
+
 		nl;
 	}
+
 
 
 	return 0;
@@ -112,8 +131,6 @@ int main()
 
 /*
 	Documentation
-	odd ones
-	all same ones
 
 */
 

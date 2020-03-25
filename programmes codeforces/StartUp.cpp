@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Start up
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,72 +49,61 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
+	char palin[] = "AHIMOTUVWXY";
+	string a;
+	int flag = 0;
+
+	cin >> a;
+
+	int n = a.size();
+	if (a.size() == 1)
 	{
-		int n;
-		sif(n);
-
-		if (n == 1)
+		for (int j = 0; j < size(palin); j++)
 		{
-
-
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
-		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
+			if (a[0] == palin[j])
 			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
+
+				flag = 1;
+				break;
 			}
 		}
-		nl;
+	}
+	// else	if (a.size() == 2)
+	// {
+	// 	if (a[0] == a[1])
+	// 	{
+	// 		flag = 1;
+
+	// 	}
+	// }
+	else
+	{
+		for (int i = 0, j = n - 1; i <= j; i++, j--)
+		{
+			if (a[i] == a[j] && (a[i] == palin[0] || a[i] == palin[1] || a[i] == palin[2] || a[i] == palin[3] || a[i] == palin[4] || a[i] == palin[5] || a[i] == palin[6] || a[i] == palin[7] || a[i] == palin[8] || a[i] == palin[9] || a[i] == palin[10]))
+			{
+				flag = 1;
+
+			}
+			else
+			{
+				flag = 0;
+				break;
+			}
+		}
 	}
 
+
+
+	pf(flag ? "YES" : "NO");
+	nl;
 
 	return 0;
 }
 
 /*
 	Documentation
-	odd ones
-	all same ones
-
+	palindrome
 */
 
 

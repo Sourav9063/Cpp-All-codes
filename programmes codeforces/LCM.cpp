@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: LCM
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,71 +49,24 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
+	lli n;
+	slf(n);
+	lli m = sqrt(n);
+	lli ans = 0;
+	for (lli i = 1; i <= m; i++)
 	{
-		int n;
-		sif(n);
-
-		if (n == 1)
-		{
-
-
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
-		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
-			else
-			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
-			}
-		}
-		nl;
+		if (n % i == 0)
+			ans += 2;
 	}
-
+	if (m * m == n)
+		ans -= 1;
+	plf(ans);
 
 	return 0;
 }
 
 /*
 	Documentation
-	odd ones
-	all same ones
 
 */
 

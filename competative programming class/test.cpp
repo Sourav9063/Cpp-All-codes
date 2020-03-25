@@ -1,4 +1,4 @@
-		// Name: seive
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -38,76 +38,63 @@ using namespace std;
 
 #define pt printf(" * \n")
 
-const double pie= 2*acos(0.0);
-const long long mxl= 1000000007;
+const double pie = 2 * acos(0.0);
+const long long mxl = 1000000007;
 
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
+template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
+template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
-
-vector<ulli>vPrime;
-
-void seive()
-{
-    ulli n = 10000000;
-//suf(n);
-    bitset<10000000>arr;
-    arr.flip();
-    arr[1] = 0;
-    for (ulli p = 2; p * p <= n; p++)
-    {
-        if (arr[p])
-        {
-            for (ulli i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-// parray(arr,arr+(n+1));
-    for (ulli p = 1; p <= n; p++)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-//puf(p);nl;
-        }
-    }
-}
 
 
 int main()
 {
-	pif(44655&1);
+    int t;
+    sif(t);
+    while (t--)
+    {
+        ulli input;
+        suf(input);
+        if (input == 2)
+        {
+            pf("1 1");
+        }
 
-	return 0;
+        else
+        {
+            pf("1 "); puf(input - 1);
+        }
+
+        nl;
+    }
+
+    return 0;
 }
 
 /*
-	Documentation
-	
+    Documentation
+
 */
 
 
-/* Assign vector 
-    vector<int> v; 
-  
-     fill the array with 10 five times 
-    v.assign(5, 10); 
+/* Assign vector
+    vector<int> v;
 
-     // inserts 5 at the beginning 
+     fill the array with 10 five times
+    v.assign(5, 10);
+
+     // inserts 5 at the beginning
     v.insert(v.begin(), 5);
 
 
-    // removes the first element 
-    v.erase(v.begin());  
+    // removes the first element
+    v.erase(v.begin());
 
-       // erases the vector 
+       // erases the vector
     v.clear();
 
-     // inserts at the beginning and extends the vector 
-    v.emplace(v.begin(), 5); 
+     // inserts at the beginning and extends the vector
+    v.emplace(v.begin(), 5);
 
     // string to int / array to int
     int a=stoi(a); / int a=atoi(a);

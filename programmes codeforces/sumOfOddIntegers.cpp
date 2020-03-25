@@ -1,4 +1,4 @@
-// Name: Yet Another Tetris Problem
+// Name: Sum of Odd Integers
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -53,68 +53,48 @@ int main()
 	sif(t);
 	while (t--)
 	{
-		int n;
-		sif(n);
+		lli n, k;
+		slf(n); slf(k);
+		// n&1
+		// odd hole 1
 
-		if (n == 1)
+		if (k <= sqrt(n))
 		{
 
 
-			int ar;
-			sif(ar);
-			pf("YES");
-		}
-		else
-		{	int arr[n];
-			int flag0s = 0;
-			sarray(arr, arr + n);
-			// for (int i = 0; i < n; i++)
-			// {
-			// 	sif(arr[i]);
-			// 	if (arr[0] == 0)
-			// 		flag0s++;
-			// }
-			sort(arr, arr + n);
-			//flag0s--;
-			// if (arr[0] == 0)
-			// {
-			// 	int tmpMin = arr[flag0s], tmpMax = arr[n - 1];
-
-
-			// }
-
-
-
-			int tmpMin = arr[0], tmpMax = arr[n - 1];
-			int flag = 0;
-			if ((tmpMax - tmpMin) == 0)pf("YES");
+			if ((n & 1) && (k & 1))
+			{
+				pf("YES");
+			}
+			else	if (!(n & 1) && !(k & 1))
+			{
+				pf("YES");
+			}
 			else
 			{
-				for (int i = 1; i < n; i++)
-				{
-					if ((arr[i] - tmpMin) % 2)
-					{
-						flag = 1;
-						break;
-					}
-				}
-				if (flag)pf("NO");
-				else
-					pf("YES");
+				pf("NO");
 			}
 		}
+		else
+		{
+			pf("NO");
+		}
+
 		nl;
+
+
+
 	}
-
-
 	return 0;
+
 }
-
 /*
+sqrt er small hole
 	Documentation
-	odd ones
-	all same ones
-
+	even even yes
+	even odd no
+	odd odd yes
+	odd even no
 */
 
 
