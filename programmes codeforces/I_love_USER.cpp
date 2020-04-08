@@ -1,4 +1,4 @@
-// Name:
+// Name: I_love_%username%
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,17 +49,40 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    vector<int> v;
+	int n;
+	sif(n);
+	int tmp;
+	sif(tmp);
+	int tmpMin = tmp;
+	int tmpMax = tmp;
+	n--;
+	int ans = 0;
+	while (n--)
+	{
+		sif(tmp);
+		if (tmp > tmpMax)
+		{
+			ans++;
+			tmpMax = tmp;
 
-    sort(v.begin(), v.end());
-    v.size();
+		}
+		if (tmp < tmpMin)
+		{
+			ans++;
+			tmpMin = tmp;
+		}
 
 
-    return 0;
+
+
+	}
+
+	pif(ans); nl;
+	return 0;
 }
 
 /*
-    Documentation
+	Documentation
 
 */
 

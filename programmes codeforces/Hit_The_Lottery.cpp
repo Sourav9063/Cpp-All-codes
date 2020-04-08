@@ -49,17 +49,31 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    vector<int> v;
+	lli n;
+	slf(n);
+	lli ans = 0;
+	ans = (n / 100);
+	int tmp = n % 100;
 
-    sort(v.begin(), v.end());
-    v.size();
+	while (tmp > 0)
+	{
 
+		if (tmp >= 20) {tmp -= 20; ans++;}
+		else if (tmp >= 10) {tmp -= 10; ans++;}
+		else if (tmp >= 5) {tmp -= 5; ans++;}
+		else
+		{	ans += tmp;
+			tmp -= tmp;
+		}
 
-    return 0;
+		//plf(ans); pt;
+	}
+	plf(ans); nl;
+	return 0;
 }
 
 /*
-    Documentation
+	Documentation
 
 */
 

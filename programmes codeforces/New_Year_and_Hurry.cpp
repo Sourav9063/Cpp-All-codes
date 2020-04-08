@@ -1,4 +1,4 @@
-// Name:
+// Name: New Year and Hurry
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -48,18 +48,27 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 
 int main()
-{
-    vector<int> v;
-
-    sort(v.begin(), v.end());
-    v.size();
-
-
-    return 0;
+{	int tmpl = 0;
+	int n, k;
+	s2f(n, k);
+	int tmp = 240 - k;
+	int i = 1;
+	for (i = 1; i <= n; i++)
+	{
+		tmpl += 5 * i;
+		//	pif(tmpl); pt;
+		if (tmpl > tmp )
+		{
+			//pif(i); pt;
+			break;
+		}
+	}
+	pif(i - 1); nl;
+	return 0;
 }
 
 /*
-    Documentation
+	Documentation
 
 */
 

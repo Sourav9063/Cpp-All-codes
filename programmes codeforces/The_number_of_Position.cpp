@@ -49,17 +49,21 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    vector<int> v;
-
-    sort(v.begin(), v.end());
-    v.size();
 
 
-    return 0;
+	int n, a, b, x;
+	s3f(n, a, b);
+
+	x = max(a + 1, n - b);
+	pif( n - x + 1);
+	nl;
+
+
+	return 0;
 }
 
 /*
-    Documentation
+	Documentation
 
 */
 
