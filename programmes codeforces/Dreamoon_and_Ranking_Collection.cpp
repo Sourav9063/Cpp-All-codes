@@ -1,4 +1,4 @@
-// Name:
+// Name: Dreamoon and Ranking Collection
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,11 +49,47 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	int t;
+	sif(t);
+//	pif(t); pt;
+	while (t--)
+	{
+		int n, x;
+		s2f(n, x);
+		int ans = 0;
+		int sive[2000] = {0};
+		int arr[n];
+		for (int i = 0; i < n; i++)
+		{
+			int tmp;
+			sif(tmp);
+			arr[i] = tmp;
+			sive[tmp] = 1;
+
+		}
+		//	parray(arr, arr + n);
+
+		for (int i = 1; ; i++)
+		{
+			if (sive[i] == 0)
+			{
+				x--;
+			}
 
 
+			if (x == 0 && sive[i + 1] == 0)
+			{
+				//pif(i); pt;
+				ans = i;
+				break;
+			}
+		}
+
+		pif(ans);
+		nl;
+	}
+
+	return 0;
 }
 
 /*

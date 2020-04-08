@@ -49,11 +49,14 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	char a;
+	lli num;
+	cin >> a;
+	slf(num);
 
+	pif((num % 2)); nl;
 
+	return 0;
 }
 
 /*

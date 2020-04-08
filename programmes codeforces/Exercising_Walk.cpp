@@ -1,4 +1,4 @@
-// Name:
+// Name: Exercising Walk
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,11 +49,53 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	int t;
+	sif(t);
+	while (t--)
+	{	int	flag = 1;
+		lli aL, bR, cD, dU;
+		slf(aL);
+		slf(bR);
+		slf(cD);
+		slf(dU);
+
+		lli x, y, x1, y1, x2, y2;
+		slf(x);
+		slf(y);
+		slf(x1);
+		slf(y1);
+		slf(x2);
+		slf(y2);
+
+		// lli tmpx = x - aL; if (tmpx < x1) {flag = 0; pt;}
+
+		// tmpx += bR; if (tmpx > x2) {flag = 0; pt;}
+
+		// lli tmpy = y - cD; if (tmpx < y1) {flag = 0; pt;}
+
+		// tmpy += dU; if (tmpy > x2) {flag = 0; pt;}
+
+		if ((aL != 0 && bR != 0 && x1 == x2) || (y1 == y2 && dU != 0 && cD != 0)) {flag = 0;}
+
+		lli tmplr =  bR - aL;
+		lli tmpud = dU - cD;
+
+		lli tmpx = x + tmplr;
+		lli tmpy = y + tmpud;
+		//	plf(tmpx); nl; plf(tmpy); nl;
 
 
+
+		if (tmpx < x1 || tmpx > x2) {flag = 0;}
+		if (tmpy < y1 || tmpy > y2) {flag = 0;}
+
+		pf(flag ? "YES" : "NO");
+		nl;
+
+	}
+
+
+	return 0;
 }
 
 /*

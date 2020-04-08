@@ -1,4 +1,4 @@
-// Name:
+// Name: K-Complete Word
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,11 +49,75 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	int t;
+	sif(t);
+	while (t--)
+	{
+		vector<int> vAns;
+		int n, k;
+		s2f(n, k);
+		string Main;
+		cin >> Main;
+		int tmpS = n / k;
+		vector<string>str;
+		string tmp;
+		tmp = Main.substr(0, k);
+		str.push_back(tmp);
 
 
+		for (int i = 1; i < tmpS; i++)
+		{
+			tmp = Main.substr(i * k, k);
+			str.push_back(tmp);
+		}
+
+		int ans = mxl;
+		int tk = k;
+		int tmpNot = 0;
+		for (int i = 0; i < tmpS; i++)
+		{
+			tmpNot = 0;
+
+			for (int l = tmpS - 1; l >= 0; l--)
+			{
+				//pif(l); pt;
+				for (int j = 0; j < k; j++)
+				{
+					if (str[i][j] != str[l][j])
+					{
+						tmpNot++;
+						//	cout << str[i] << " " << str[l]; pt;
+					}
+				}
+
+			}
+
+			ans = min(ans, tmpNot);
+
+		}
+
+
+
+
+		pif(ans);
+
+
+
+
+
+
+
+
+
+
+
+
+
+		nl;
+
+	}
+
+	return 0;
 }
 
 /*

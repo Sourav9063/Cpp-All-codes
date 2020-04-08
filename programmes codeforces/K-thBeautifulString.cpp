@@ -1,4 +1,4 @@
-// Name:
+// Name:  K-th Beautiful String
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,11 +49,64 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	lli t;
+	slf(t);
+	while (t--)
+	{
+		lli n, k;
+		slf(n);
+		slf(k);
+
+		string	s(n, 'a');
+		//	memset(s, 'a', n);
+		//	cout << s[n]; pt;
+		lli tmp = (n * (n - 1)) / 2;
+		if (k == 1)
+		{
+			s[n - 2] = 'b';
+			s[n - 1] = 'b';
+		}
+		else if (k == tmp)
+		{
+			s[0] = 'b';
+			s[1] = 'b';
+		}
+		else
+		{
+			lli pose1b = (1 + sqrt(8 * k)) / 2;
+			//pif(pose1b); nl;
+			lli tmp1pos = pose1b ;
 
 
+			pose1b = n - pose1b - 1;
+
+			s[pose1b] = 'b';
+
+			lli tmp2 = (tmp1pos * (tmp1pos - 1)) / 2 ;
+
+			lli 	pose2b = k - tmp2;
+			pose2b = n - pose2b;
+			//pif(tmp2); pt;
+
+
+			// pose2b += (n - pose1b);
+			// pose2b--;
+			// if (pose2b == pose1b)
+			// 	pose2b = 1;
+
+			// pif(pose1b); pt;
+			// pif(pose2b); nl;
+			s[pose2b] = 'b';
+
+		}
+
+		cout << s << endl;
+
+
+
+	}
+
+	return 0;
 }
 
 /*

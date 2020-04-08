@@ -1,4 +1,4 @@
-// Name:
+// Name: BowWow and the Timetable
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -33,7 +33,7 @@ using namespace std;
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
 #define fr(n) for(int i=0;i<n;i++)
-#define fr1(n) for(int i=1;i<=n;i++)
+#define fr1(n) for(int i=1;i<n;i++)
 
 
 #define pt printf(" * \n")
@@ -45,20 +45,83 @@ template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;
 
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
+// ulli decimal;
+// string bin;
+// void binTodec()
+// {
+// 	int siz = bin.size();
+
+// 	for (int i = 0; i < siz; i++)
+// 	{
+// 		if (bin[i] == '1')
+// 		{
+// 			decimal += pow(2, (siz - 1) - i);
+// 		}
+
+// 	}
+// 	//cout << decimal;
+// }
+
+// int main()
+// {
+// 	cin >> bin;
+
+
+// 	binTodec();
+// 	int ans = 0;
+// 	ulli tmp = 0;
+// 	for (ans = 0;  ; ans++ ) {
+// 		tmp = pow(4, ans);
+// 		//	puf(tmp); pt;
+// 		//pif(ans); nl;
+// 		if (tmp >= decimal)break;
+// 	}
+
+
+// 	pif(ans);
+
+// 	return 0;
+// }
+
 
 
 int main()
 {
-	std::vector<string> v;
-	std::vector<char> v; \
-	v.size
+	int 	flag = 0;
+	string s;
+	cin >> s;
+	lli siz = s.size();
+	//cout << (siz); nl;
+	lli ans = siz / 2;
+	if (siz % 2 == 0) {
+		ans = siz / 2;
+		//plf(ans);
+	}
+	else
+	{
+		fr1(siz)
+		{
+			if (s[i] == '1')
+			{
+				flag = 1;
+				break;
+			}
+		}
+		if (flag)ans++;
 
+	}
 
+	plf(ans);
 }
 
-/*
+/*\
+if string er size divisable /2 thn ans=siz/2
+else
+check korte hobe 1pose theke last porjonto kono 1 ase nki
+thakle ans++
 	Documentation
-
+	bin to decimal
+	4*i<decimal;
 */
 
 
