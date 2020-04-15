@@ -1,4 +1,4 @@
-// Name: Little Artem
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,115 +49,19 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
-	{
+	int a[3];
 
-		//string s = "BWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWB";
-		int n, m;
-		//char w = 'W', b = 'B';
-		s2f(n, m);
+	sarray(a, a + 3);
+	sort(a, a + 3);
+	int tmp = (a[0] + a[2]) / 2;
 
-		// if ((n * m) % 2)
-		// {
-		pf("W");
-		for (int i = 2; i <= n * m; i++)
-		{
-			// if (i % 2)
-			// {
-			pf("B");
+	// int ans=0;
+	// = tmp - a[0];
+	// ans += (a[2] - tmp);
+	// ans += abs(tmp - a[1]);
 
 
-			// }
-			// else
-			// {
-			// 	pf("W");
-			// }
-
-			if (i % m == 0)
-			{
-				nl;
-			}
-		}
-		// }
-		// else
-		// {
-		// 	if (m % 2 )
-		// 	{
-		// 		for (int i = 1; i <= n * m; i++)
-		// 		{
-		// 			if (i == (n * m))
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 			else if (i % 2)
-		// 			{	pf("B");
-
-
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
-
-
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-		// 	}
-		// 	else
-		// 	{
-		// 		for (int i = 1; i <= ((n - 1) * (m)); i++)
-		// 		{
-		// 			if (i % 2)
-		// 			{	pf("B");
-
-
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
-
-
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-
-		// 		if (m > 2)
-		// 		{
-		// 			for (int i = 1; i < m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-		// 			pf("W");
-		// 		}
-
-		// 		else
-		// 		{
-		// 			for (int i = 1; i <= m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 		}
-
-		// 		nl;
-
-		// 	}
-
-		// }
-
-	}
+	pif(a[2] - a[0]); nl;
 
 
 	return 0;

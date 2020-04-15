@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,21 +33,18 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+	Sourav;
 
 
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		cin >> n;
+	int n, m, a, b;
+	cin >> n >> m >> a >> b;
 
 
-		nl;
-	}
-
+	int tmp = min(b, n % m * a);
+	tmp = min(b, tmp);
+	int ans = min(n * a, n / m * b + tmp);
+	cout << ans;
+	nl;
 
 
 	return 0;

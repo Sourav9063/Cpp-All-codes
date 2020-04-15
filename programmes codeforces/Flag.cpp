@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Flag
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -29,31 +31,62 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 
 
+#define f1 for(i=0;i<n;i++)
+#define f2 for(j=0;j<m;j++)
+
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
-
-	int t;
-	cin >> t;
-	while (t--)
+	int m, n, i, f = 0, j;
+	cin >> n >> m;
+	char a[n][m];
+	f1
 	{
-		cin >> n;
-
-
-		nl;
+		f2{
+			cin >> a[i][j];
+			// cout<<a[i][j];
+		}
+		// cout<<endl;
+	}
+	for (i = 0; i < n - 1; i++)
+	{
+		for (j = 0; j < m - 1; j++)
+		{
+			//cout<<i<<" "<<j<<endl;
+			// cout<<a[i][j]<<" "<<a[i+1][j]<<" ";
+			if ((a[i][j] != a[i][j + 1]) || (a[i][j] == a[i + 1][j]))
+			{
+				f = 1;
+				break;
+			}
+		}
+		if (f == 1)
+			break;
+		if (a[i][j] == a[i + 1][j])
+		{
+			f = 1;
+			break;
+		}
 	}
 
-
-
-	return 0;
+	if (f)
+		cout << "NO\n";
+	else
+	{
+		for (j = 0; j < m - 1; j++)
+		{
+			if (a[i][j] != a[i][j + 1])
+			{
+				f = 1;
+				break;
+			}
+		}
+		cout << (f ? "NO" : "YES") << endl;
+	}
 }
 
 /*
 	Documentation
-
+	normal check;
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

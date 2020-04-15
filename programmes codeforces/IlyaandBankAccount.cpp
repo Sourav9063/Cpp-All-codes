@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Ilya and Bank Account
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,21 +33,24 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+	Sourav;
 
-
-	int t;
-	cin >> t;
-	while (t--)
+	lli n;
+	cin >> n;
+	if (n >= 0)cout << n << endl;
+	else
 	{
-		cin >> n;
-
-
-		nl;
+		n = -1 * n;
+		lli tmpl, tmps;
+		tmpl = n % 10;
+		tmps = (n % 100 - n % 10) / 10;
+		//cout << tmpl << tmps << endl;
+		if (tmpl >= tmps)cout << -1 * ( n / 10 ) << endl;
+		else
+		{
+			cout  << -1 * ( ((n / 10) - tmps) + tmpl) << endl;
+		}
 	}
-
 
 
 	return 0;

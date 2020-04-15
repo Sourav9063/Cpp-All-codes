@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Construct the String
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,19 +33,36 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+	Sourav;
 
 
 	int t;
 	cin >> t;
 	while (t--)
 	{
-		cin >> n;
+		int n, a, b;
+		cin >> n >> a >> b;
+		//	cout << a << endl;
+		char arr[a];
+		for (int i = 0; i < a; i++)
+		{
+			char tmp;
+			if (i < b)
+			{
 
+				tmp = 'a' + i;
+			}
 
-		nl;
+			arr[i] = tmp;
+		}
+		//cout << arr << endl;
+		//parray(arr, arr + a);
+		for (int i = 0; i < n; i++)
+		{
+			cout << arr[i % a];
+		}
+		cout << endl;
+
 	}
 
 

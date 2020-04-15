@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Police Recruits
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,20 +33,24 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
-
+	Sourav;
+	int ans = 0;
 	int t;
+	int police = 0;
 	cin >> t;
 	while (t--)
 	{
-		cin >> n;
+		int tmp;
+		cin >> tmp;
 
 
-		nl;
+		if (police == 0 && tmp == -1)ans++;
+		else if (police != 0 && tmp == -1)police--;
+		else police += tmp;
+
 	}
+
+	cout << ans << endl;
 
 
 

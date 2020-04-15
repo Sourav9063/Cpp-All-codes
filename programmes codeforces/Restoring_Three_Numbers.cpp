@@ -1,4 +1,4 @@
-// Name: Little Artem
+// Name:  Restoring Three Numbers
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,115 +49,11 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
-	{
+	lli a[4];
+	cin >> a[0] >> a[1] >> a[2] >> a[3];
 
-		//string s = "BWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWB";
-		int n, m;
-		//char w = 'W', b = 'B';
-		s2f(n, m);
-
-		// if ((n * m) % 2)
-		// {
-		pf("W");
-		for (int i = 2; i <= n * m; i++)
-		{
-			// if (i % 2)
-			// {
-			pf("B");
-
-
-			// }
-			// else
-			// {
-			// 	pf("W");
-			// }
-
-			if (i % m == 0)
-			{
-				nl;
-			}
-		}
-		// }
-		// else
-		// {
-		// 	if (m % 2 )
-		// 	{
-		// 		for (int i = 1; i <= n * m; i++)
-		// 		{
-		// 			if (i == (n * m))
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 			else if (i % 2)
-		// 			{	pf("B");
-
-
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
-
-
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-		// 	}
-		// 	else
-		// 	{
-		// 		for (int i = 1; i <= ((n - 1) * (m)); i++)
-		// 		{
-		// 			if (i % 2)
-		// 			{	pf("B");
-
-
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
-
-
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-
-		// 		if (m > 2)
-		// 		{
-		// 			for (int i = 1; i < m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-		// 			pf("W");
-		// 		}
-
-		// 		else
-		// 		{
-		// 			for (int i = 1; i <= m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 		}
-
-		// 		nl;
-
-		// 	}
-
-		// }
-
-	}
+	sort(a, a + 4);
+	cout << a[3] - a[1] << " " << a[3] - a[0] << " " << a[3] - a[2] << " " << endl;
 
 
 	return 0;

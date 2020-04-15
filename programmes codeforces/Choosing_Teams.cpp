@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Choosing Teams
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +21,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,20 +33,29 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+	Sourav;
 
 
 	int t;
 	cin >> t;
+	int k;
+	cin >> k;
+	int ans = 0;
 	while (t--)
 	{
-		cin >> n;
+		int tmp;
+		cin >> tmp;
+		if (tmp <= (5 - k))ans++;
+		else
+			continue;
 
 
-		nl;
+
+
+
 	}
+
+	cout << ans / 3 << endl;
 
 
 

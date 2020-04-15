@@ -1,4 +1,4 @@
-// Name: Little Artem
+// Name:
 #include<bits/stdc++.h>
 using namespace std;
 // __int64 variable; cin cout diye
@@ -49,122 +49,74 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	int t;
-	sif(t);
-	while (t--)
-	{
+    int t;
+    sif (t);
+    while (t--)
+    {
+        lli n;
+        slf(n);
+        lli arr[n];
 
-		//string s = "BWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWB";
-		int n, m;
-		//char w = 'W', b = 'B';
-		s2f(n, m);
+        std::vector<long long> vP;
+        vector<long long>vN;
+        for (lli i = 0; i < n; i++)
+        {
+            // lli tmp;
+            slf(arr[i]);
+            //arr[i] = tmp;
 
-		// if ((n * m) % 2)
-		// {
-		pf("W");
-		for (int i = 2; i <= n * m; i++)
-		{
-			// if (i % 2)
-			// {
-			pf("B");
+            // if (tmp < 0)
+            // {
+            //     vN.pb(tmp);
+            // }
+            // else
+            // {
+            //     vP.pb(tmp);
+            // }
 
-
-			// }
-			// else
-			// {
-			// 	pf("W");
-			// }
-
-			if (i % m == 0)
-			{
-				nl;
-			}
-		}
-		// }
-		// else
-		// {
-		// 	if (m % 2 )
-		// 	{
-		// 		for (int i = 1; i <= n * m; i++)
-		// 		{
-		// 			if (i == (n * m))
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 			else if (i % 2)
-		// 			{	pf("B");
+        }
 
 
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
+        sort(arr, arr + n);
+
+        // sort(all(vN));
+        // sort(all(vP));
+        // lli sizevN, sizevP;
+        // sizevN = vN.size();
+        // sizevP = vP.size();
 
 
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-		// 	}
-		// 	else
-		// 	{
-		// 		for (int i = 1; i <= ((n - 1) * (m)); i++)
-		// 		{
-		// 			if (i % 2)
-		// 			{	pf("B");
+        lli tmpM = n / 2;
+        if (n % 2 == 1) {
+            plf(arr[tmpM]); pf(" ");
+            // for (lli i = 0; i < n; i++)
+            // {
+            //     plf(arr[i]);
 
+            // }
+            for (lli j = tmpM - 1, k = tmpM + 1; ; j--, k++)
+            {
+                plf(arr[j]); pf(" "); pif(arr[k]); pf(" ");
+                if (j <= 0 || k >= n)break;
+            }
 
-		// 			}
-		// 			else
-		// 			{
-		// 				pf("W");
-		// 			}
+        }
+        else
+        {
 
+            for (lli j = tmpM - 1, k = tmpM; ; j--, k++)
+            {
+                plf(arr[j]); pf(" "); pif(arr[k]); pf(" ");
+                if (j <= 0 || k >= n)break;
+            }
 
-		// 			if (i % m == 0)
-		// 			{
-		// 				nl;
-		// 			}
-		// 		}
-
-		// 		if (m > 2)
-		// 		{
-		// 			for (int i = 1; i < m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-		// 			pf("W");
-		// 		}
-
-		// 		else
-		// 		{
-		// 			for (int i = 1; i <= m; i++)
-		// 			{
-		// 				pf("B");
-
-		// 			}
-
-		// 		}
-
-		// 		nl;
-
-		// 	}
-
-		// }
-
-	}
-
-
-	return 0;
+        }
+        nl;
+    }
 }
 
 /*
-	Documentation
+    Documentation
 
 */
 
