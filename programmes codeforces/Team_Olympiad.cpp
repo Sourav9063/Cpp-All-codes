@@ -1,4 +1,4 @@
-//                      Name: Given Length and Sum of Digits
+//                      Name: Team Olympiad
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -9,7 +9,8 @@ using namespace std;
 #define pf printf
 #define sf scanf
 
-#define pt printf(" * \n")
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
 
 #define s2f(a,b) scanf("%d%d",&a,&b)
 #define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
@@ -33,27 +34,47 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
-	int m, s;
-	cin >> m >> s;
-	if (s < 1 && m > 1 || s > m * 9)
-		cout << -1 << " " << -1 << endl;
-	else
+
+	int n;
+	cin >> n;
+	int p, m, pe;
+	p = m = pe = 0;
+
+	vector<int> pP;
+	vector<int> pM;
+	vector<int> pPE;
+
+	int v[n + 1];
+	v[0] = 0;
+	for (int i = 1; i <= n; ++i)
 	{
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = max(0, k - 9 * i);
-			if (j == 0 && i == m - 1 && k) j = 1;
-			cout << j;
-			k -= j;
-		}
-		cout << ' ';
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = min(9, k);
-			cout << j;
-			k -= j;
-		}
+		cin >> v[i];
+		if (v[i] == 1) {p++; pP.push_back(i);}
+		else if (v[i] == 2) {m++; pM.push_back(i);}
+		else {pe++; pPE.push_back(i);}
 	}
+	//sort(v.begin(), v.end());
+	//cout << p << m << pe << endl;
+	int tmp = min(p, min(m, pe));
+	cout << tmp << endl;
 
+	// while (tmp--)
+	// {	int i = 1;
+	// 	for (i; i < 4; i++)
+	// 	{
 
+	// 		tmpp = lower_bound(all(v), i) - v.begin();
+	// 		cout << tmpp << " ";
+	// 		v[tmpp] = 0;
+
+	// 	}
+	// 	nl;
+	// }
+
+	for (int i = 0; i < tmp; i++)
+	{
+		cout << pP[i] << " " << pM[i] << " " << pPE[i] << endl;
+	}
 
 	return 0;
 }

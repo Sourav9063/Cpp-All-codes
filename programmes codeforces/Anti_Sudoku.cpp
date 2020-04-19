@@ -1,4 +1,4 @@
-//                      Name: Given Length and Sum of Digits
+//                      Name: anti sudoku
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -33,24 +33,25 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
-	int m, s;
-	cin >> m >> s;
-	if (s < 1 && m > 1 || s > m * 9)
-		cout << -1 << " " << -1 << endl;
-	else
+
+
+	int t;
+	cin >> t;
+	while (t--)
 	{
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = max(0, k - 9 * i);
-			if (j == 0 && i == m - 1 && k) j = 1;
-			cout << j;
-			k -= j;
+		for (int i = 0; i < 9; i++)
+		{
+			string s;
+			cin >> s;
+			for (int j = 0; j < 9; j++)
+			{
+				if (s[j] == '7')s[j] = '5';
+			}
+			cout << s << endl;
 		}
-		cout << ' ';
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = min(9, k);
-			cout << j;
-			k -= j;
-		}
+
+
+
 	}
 
 
@@ -60,7 +61,8 @@ int main()
 
 /*
 	Documentation
-
+	just jekono ekta num change korlei hobe
+	onk easy
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

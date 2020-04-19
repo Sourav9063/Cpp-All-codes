@@ -1,4 +1,4 @@
-//                      Name: Given Length and Sum of Digits
+//                      Name: Mishka and Game
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -33,26 +33,24 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
-	int m, s;
-	cin >> m >> s;
-	if (s < 1 && m > 1 || s > m * 9)
-		cout << -1 << " " << -1 << endl;
-	else
-	{
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = max(0, k - 9 * i);
-			if (j == 0 && i == m - 1 && k) j = 1;
-			cout << j;
-			k -= j;
-		}
-		cout << ' ';
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = min(9, k);
-			cout << j;
-			k -= j;
-		}
-	}
 
+
+	int t;
+	cin >> t;
+	int ans = 0;
+	while (t--)
+	{
+		int a, b;
+		cin >> a >> b;
+		if (a > b)ans++;
+		else if (a < b)ans--;
+		else continue;
+
+
+	}
+	if (ans > 0)cout << "Mishka" << endl;
+	else if (ans == 0)cout << "Friendship is magic!^^" << endl;
+	else cout << "Chris" << endl;
 
 
 	return 0;

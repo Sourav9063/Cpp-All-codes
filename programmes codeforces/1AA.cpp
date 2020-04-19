@@ -9,7 +9,6 @@ using namespace std;
 #define pf printf
 #define sf scanf
 
-#define nl printf("\n")
 #define pt printf(" * \n")
 
 #define s2f(a,b) scanf("%d%d",&a,&b)
@@ -21,6 +20,8 @@ using namespace std;
 #define max(a, b) ((a) > (b) ? (a) :(b))
 #define min(a, b) ((a) < (b) ? (a) :(b))
 
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 const double pie = 2 * acos(0.0);
 const long long mxl = 1000000007;
 
@@ -31,28 +32,45 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+  Sourav;
 
+  int n;
+  cin >> n;
+  int arr[n + 1][n + 1];
+  for (int i = 1; i <= n; i++)
+  {
 
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		cin >> n;
+    arr[1][i] = 1;
+    // cout<<arr[i][1]<<endl;
+    arr[i][1] = 1;
+  }
+//nl;
+  for (int i = 2; i <= n; i++)
+  {
 
+    for (int j = 2; j <= n; j++)
+    {
+      arr[i][j] = arr[i - 1][j] + arr[i][j - 1];
 
-		nl;
-	}
+    }
+  }
 
+  // for (int i = 1; i <= n; i++)
+  // {
 
+  //   for (int j = 1; j <= n; j++)
+  //   {
+  //     cout << arr[i][j] << " "; //=arr[i-1][j]+arr[i][j-1];
 
-	return 0;
+  //   }
+  //   cout << endl;
+  // }
+  cout << arr[n][n] << endl;
+  return 0;
 }
 
 /*
-	Documentation
+  Documentation
 
 */
 /*

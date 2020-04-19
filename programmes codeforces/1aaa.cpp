@@ -1,4 +1,4 @@
-//                      Name: Given Length and Sum of Digits
+//                      Name:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -33,28 +33,33 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
-	int m, s;
-	cin >> m >> s;
-	if (s < 1 && m > 1 || s > m * 9)
-		cout << -1 << " " << -1 << endl;
-	else
+
+
+	int t;
+	cin >> t;
+	while (t--)
 	{
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = max(0, k - 9 * i);
-			if (j == 0 && i == m - 1 && k) j = 1;
-			cout << j;
-			k -= j;
+		int x, n, m;
+		cin >> x >> n >> m;
+		if (x > 20) {
+			while (n--) {
+				x = (x / 2) + 10 ;
+			}
+			if (x <= (10 * m)) cout << "YES" << endl ;
+			else cout << "NO" << endl ;
 		}
-		cout << ' ';
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = min(9, k);
-			cout << j;
-			k -= j;
+		else {
+			if (x <= 10 * m)
+				cout << "YES" << endl ;
+			else if (m >= 2) {
+				cout << "YES" << endl ;
+			}
+			else {
+				cout << "NO" << endl ;
+			}
 		}
+
 	}
-
-
-
 	return 0;
 }
 

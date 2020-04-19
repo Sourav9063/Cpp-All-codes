@@ -1,4 +1,4 @@
-//                      Name: Given Length and Sum of Digits
+//                      Name: rising bacteria
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -9,7 +9,8 @@ using namespace std;
 #define pf printf
 #define sf scanf
 
-#define pt printf(" * \n")
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
 
 #define s2f(a,b) scanf("%d%d",&a,&b)
 #define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
@@ -33,25 +34,14 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
-	int m, s;
-	cin >> m >> s;
-	if (s < 1 && m > 1 || s > m * 9)
-		cout << -1 << " " << -1 << endl;
-	else
-	{
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = max(0, k - 9 * i);
-			if (j == 0 && i == m - 1 && k) j = 1;
-			cout << j;
-			k -= j;
-		}
-		cout << ' ';
-		for (i = m - 1, k = s; i >= 0; i--) {
-			int j = min(9, k);
-			cout << j;
-			k -= j;
-		}
+	lli n = 0;
+	cin >> n;
+	int answer = 0;
+	while (n) {
+		if (n & 1) answer++;
+		n = n >> 1;
 	}
+	cout << answer;
 
 
 
@@ -60,6 +50,7 @@ int main()
 
 /*
 	Documentation
+	check 2 er exponential i will use shift right
 
 */
 /*
