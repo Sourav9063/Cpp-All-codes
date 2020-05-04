@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Vus the Cossack and a Contest
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -10,32 +10,39 @@ using namespace std;
 #define pt cout<<"*"<<endl;
 #define nl cout<<endl;
 
-#define pb(a)    emplace_back(a)
+#define s2f(a,b) scanf("%d%d",&a,&b)
+#define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
+
+#define pb(a) push_back(a);
 #define all(x)   (x).begin(),(x).end()
 #define Sort(x)  sort(all((x)))
 #define rSort(x) sort((x).rbegin(),(x).rend())
 
-#define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define Sourav ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	int n, m, k;
+	cin >> n >> m >> k;
+	if (n <= m && n <= k)cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;
-n = n << 1;   // Multiply n with 2  use >> for div
+n = n << 1;   // Multiply n with 2
+n = n >> 1;   // Divide n by 2
 */

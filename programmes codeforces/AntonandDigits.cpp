@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Anton and Digits
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,18 +22,26 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	lli k2, k3, k5, k6;
+	cin >> k2 >> k3 >> k5 >> k6;
+
+	lli tmp = min(k2, min(k5, k6));
+
+	if (tmp == k2) {
+		cout << 256 * tmp << endl;
+	}
+	else
+		cout << tmp * 256 + 32 * (min(k2 - tmp, k3)) << endl;
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
-
+	Documentation
+	max,min er prblm
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

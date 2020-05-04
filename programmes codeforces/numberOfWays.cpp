@@ -22,17 +22,36 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	int n;
+	cin >> n;
+	lli arr[n + 1] = {0};
+
+	for (int i = 1; i <= n; i++)
+	{
+		cin >> arr[i];
+		arr[i] += arr[i - 1];
+	}
+	lli x = arr[n] / 3, a = 0, b = 0;
+	if (x * 3 != arr[n])
+	{
+		cout << "0" << endl;
+		return 0;
+	}
+	for (int i = 1; i < n; i++)
+	{
+		if (arr[i] == x * 2)b += a;
+		if (arr[i] == x)a++;
+	}
+	cout << b << endl;
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

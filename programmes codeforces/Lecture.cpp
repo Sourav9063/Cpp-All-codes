@@ -22,20 +22,51 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+	int n, k;
+	cin >> n >> k;
+
+	map<string, string> m;
+	for (int i = 0; i < k; i++)
+	{
+		string s1, s2;
+		cin >> s1 >> s2;
+		if (s1.size() > s2.size())
+		{
+			m.insert(make_pair(s1, s2));
+		}
+		else
+		{	m.insert(make_pair(s1, s1));
+
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		string tmp;
+		cin >> tmp;
+		cout << m[tmp] << " ";
+	}
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
+	string er prblm
 
 */
 /*
+map<lli, bool>m;
+	m[1000000000000000000] = 1;
+
+
+	// loop
+	for(auto n:arrayname/anything)
+	{
+
+	}
+int highest value is LONG_MAX;
 Number of digits in N =floor(log10(N)) + 1;
 n = n << 1;   // Multiply n with 2  use >> for div
 */

@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Pashmak and Flowers
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,17 +22,45 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	lli n;
+	cin >> n;
+	lli arr[n];
+//	static int flag[10000000] = {0};
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+		//flag[arr[i]]++;
+	}
+	sort(arr, arr + n);
+	//parray(arr, arr + n);
+	lli tmp = arr[n - 1] - arr[0];
+	lli tmp1 = 1;
+	lli tmp2 = 1;
+	for (int i = 1, j = n - 2;; i++, j--)
+	{
+		bool f1 = false, f2 = false;
+		if (arr[0] == arr[i])tmp1++;
+		else
+			f1 = true;
+		if (arr[n - 1] == arr[j])tmp2++;
+		else
+			f2 = true;
+
+		if (f1 && f2)break;
+
+	}
+	if (tmp == 0)cout << tmp << " " << (tmp2 * tmp1) / 2 - n / 2 << endl;
+	else
+		cout << tmp << " " << tmp2*tmp1 << endl;
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

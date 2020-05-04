@@ -98,19 +98,27 @@ int main()
 		// 	cout << uniqueEl << endl;
 		// }
 
-		int n, a, viz[200000] = {0};
+		int n;
 		cin >> n;
-		int mx = 0, x = 0;
-
-		for (int i = 1; i <= n; i++) {
-			cin >> a;
-			viz[a]++;
-			if (viz[a] == 1)x++;
-			mx = max(mx, viz[a]);
+		int s[n];
+		for (int i = 0; i < n; i++) {
+			cin >> s[i];
 		}
-		cout << max(min(x - 1, mx), min(x, mx - 1)) << '\n';
+		int p = 1, q = 1, l = 1;
+		sort(s, s + n);
+		for (int i = 1; i < n; i++) {
+			if (s[i] != s[i - 1]) {p++; if (l > q) q = l; l = 1;} //max same length
+			else l++;
+		}
+		if (l > q) q = l;
+		int d;
+		if (p > q) d = q;
+		else if (p == q) d = p - 1;
+		else d = p;
 
-		nl;
+
+		cout << d << "\n";
+
 	}
 
 

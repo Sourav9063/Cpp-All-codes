@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Dreamoon and Stairs
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -25,39 +25,45 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    Sourav;
+	Sourav;
 
-    map<string, int> m;
-    map<string, int>::iterator it;
+	int n, m;
+	cin >> n >> m;
+	int tmp = 0;
+	int ans = 0;
+	if (m <= n) {
+		if (n % 2) //odd
+		{
+			tmp = n / 2;
+			tmp++;
+			if (tmp % m == 0)cout << tmp << endl;
+			else
+			{
+				cout << ( tmp / m + 1 )*m << endl;
 
-    m["diptp"] = 12;
-    m["arnob"] = 100;
-    cout << m["diptp"] << endl;
+			}
+		}
+		else
+		{
+			tmp = n / 2;
+			//	tmp++;
+			if (tmp % m == 0)cout << tmp << endl;
+			else
+			{
+				cout << ( tmp / m + 1 )*m << endl;
 
-    m.insert(make_pair("sourav", 63));
-    it = m.begin();
+			}
+		}
+	}
+	else
+		cout << -1 << endl;
 
-
-    cout << it->first << endl;
-    cout << it->second << endl;
-
-
-    for (it = m.begin(); it != m.end(); it++)
-    {
-        cout << it->first << " ";
-        cout << it->second << endl;
-
-
-    }
-    return 0;
+	return 0;
 }
 
 /*
-    Documentation
-    map uses unique key and not unique value
-    key ta sort hoye jabe
+	Documentation
 
-    https://www.youtube.com/watch?v=fGCJIOWANIg
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

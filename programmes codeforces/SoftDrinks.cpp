@@ -8,7 +8,7 @@ using namespace std;
 #define Ld long double //Lf
 
 #define pt cout<<"*"<<endl;
-#define nl cout<<endl;
+
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -22,17 +22,19 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	lli  n, k, l, c, d, p, nl, np;
+	cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+
+	cout << min(min((k * l) / (n * nl), (c * d) / n), p / (n * np)) << endl;
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

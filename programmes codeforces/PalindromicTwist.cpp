@@ -1,3 +1,4 @@
+
 //                      Name:
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,17 +23,50 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	int t; cin >> t;
+	while (t--)
+	{
+		string s;
+		int n;
+		cin >> n;
+		int i = 0, f = 0, j = n - 1;
+		cin >> s;
+		while (i < j)
+		{
+			if (s[i] != s[j])
+			{
+				if (abs(s[i] - s[j]) != 2 ) //means far from 2 steps
+				{
+					f = 1; break;
+				}
+				else
+				{
+					i++; j--;
+				}
+			}
+			else
+			{
+				i++; j--;
+			}
+		}
+		if (f == 0)
+		{
+			cout << "YES" << endl;
+		}
+		else
+		{
+			cout << "NO" << endl;
+		}
+	}
 
 
-  cout << LONG_MAX;
-
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

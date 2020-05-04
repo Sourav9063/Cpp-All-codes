@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Vus the Cossack and Strings
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -25,39 +25,32 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    Sourav;
+	Sourav;
 
-    map<string, int> m;
-    map<string, int>::iterator it;
+	string a;
+	string b;
+	cin >> a >> b;
+	int ans = 0;
+	for (int i = 0; i < (a.size() - (b.size() - 1)); i++)
+	{
+		int tmp = 0;
+		//cout << a[i];
+		for (int j = i, k = 0; k < b.size(); j++, k++)
+		{	//cout << a[j] << " " << b[k] << endl;
+			if (a[j] != b[k])tmp++;
+			//cout << j << " " << k; pt;
+		} //nl;
+		//	cout << tmp << endl;
+		if (tmp % 2 == 0)ans++;
+	}
+	cout << ans << endl;
 
-    m["diptp"] = 12;
-    m["arnob"] = 100;
-    cout << m["diptp"] << endl;
-
-    m.insert(make_pair("sourav", 63));
-    it = m.begin();
-
-
-    cout << it->first << endl;
-    cout << it->second << endl;
-
-
-    for (it = m.begin(); it != m.end(); it++)
-    {
-        cout << it->first << " ";
-        cout << it->second << endl;
-
-
-    }
-    return 0;
+	return 0;
 }
 
 /*
-    Documentation
-    map uses unique key and not unique value
-    key ta sort hoye jabe
+	Documentation
 
-    https://www.youtube.com/watch?v=fGCJIOWANIg
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

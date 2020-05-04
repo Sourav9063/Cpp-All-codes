@@ -13,7 +13,7 @@ using namespace std;
 #define s2f(a,b) scanf("%d%d",&a,&b)
 #define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
 
-#define pb(a) push_back(a);
+#define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
 #define Sort(x)  sort(all((x)))
 #define rSort(x) sort((x).rbegin(),(x).rend())
@@ -25,39 +25,43 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-    Sourav;
+	Sourav;
 
-    map<string, int> m;
-    map<string, int>::iterator it;
+	int i, seg = 0, tri = 0, j, k, sum;
+	int ara[4];
+	for (i = 0; i < 4; i++)
+	{
+		cin >> ara[i];
+	}
+	sort(ara, ara + 4);
+	for (i = 0; i <= 1; i++)
+	{
+		for (j = i + 1; j <= 2; j++)
+		{
+			for (k = i + 2; k <= 3; k++)
+			{	if (j == k) continue;
+				sum = ara[i] + ara[j];
+				//cout<<ara[i]<<" "<<ara[j]<<" "<<ara[k]<<endl;
+				if (sum > ara[k]) tri++;
+				else if (sum == ara[k]) seg++;
+			}
+		}
 
-    m["diptp"] = 12;
-    m["arnob"] = 100;
-    cout << m["diptp"] << endl;
+	}
 
-    m.insert(make_pair("sourav", 63));
-    it = m.begin();
+	if (tri > 0) cout << "TRIANGLE";
+	else if (seg > 0) cout << "SEGMENT";
+	else cout << "IMPOSSIBLE";
 
-
-    cout << it->first << endl;
-    cout << it->second << endl;
+	return 0;
 
 
-    for (it = m.begin(); it != m.end(); it++)
-    {
-        cout << it->first << " ";
-        cout << it->second << endl;
-
-
-    }
-    return 0;
+	return 0;
 }
 
 /*
-    Documentation
-    map uses unique key and not unique value
-    key ta sort hoye jabe
+	Documentation
 
-    https://www.youtube.com/watch?v=fGCJIOWANIg
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;

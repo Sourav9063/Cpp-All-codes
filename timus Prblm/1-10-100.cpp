@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: 1 10 100 1000
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,19 +20,39 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
+
 int main()
 {
-  Sourav;
+	Sourav;
+	bool space = false;
+
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		lli k;
+		cin >> k;
 
 
-  cout << LONG_MAX;
+		lli        n = (-1 + sqrt(double(8 * k - 7))) / 2.0; //n*(n+1)/2 =k
+
+		if (space)cout << ' '; space = true;
+
+		if (k == n * (n + 1) / 2 + 1) cout << '1';
+		else cout << '0';
 
 
-  return 0;
+
+
+	}
+
+	nl;
+
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

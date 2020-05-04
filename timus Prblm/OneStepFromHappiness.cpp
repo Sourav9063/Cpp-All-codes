@@ -20,19 +20,44 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
+bool check(int n)
+{
+	int s1 = 0, s2 = 0;
+	for (int i = 1; i <= 3; i++)
+	{
+		s1 += n % 10;
+		n /= 10;
+	}
+	for (int i = 1; i <= 3; i++)
+	{
+		s2 += n % 10;
+		n /= 10;
+	}
+
+	return s1 == s2;
+}
+
+
+
+
+
 int main()
 {
-  Sourav;
+	Sourav;
+
+	int n;
+	cin >> n;
 
 
-  cout << LONG_MAX;
+	if (check(n + 1) || (n - 1))cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

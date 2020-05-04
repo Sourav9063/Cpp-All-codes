@@ -22,17 +22,22 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 
 int main()
 {
-  Sourav;
+	Sourav;
+
+	int ar[5];
+	for (int i = 0; i < 4; i++)cin >> ar[i];
+	sort(ar, ar + 4);
+	if (ar[0] + ar[3] == ar[1] + ar[2])cout << "YES\n";
+	else if (ar[0] + ar[1] + ar[2] == ar[3])cout << "YES\n";
+	else cout << "NO\n";
 
 
-  cout << LONG_MAX;
 
-
-  return 0;
+	return 0;
 }
 
 /*
-  Documentation
+	Documentation
 
 */
 /*

@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: pair
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -23,41 +23,32 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
 
+
 int main()
 {
-    Sourav;
+	Sourav;
+	pair<string, int>p;
+	p.first = "sourav";
+	p.second = 63;
+	p = make_pair("nabil", 132);
+	cout << p.first << " " << p.second << endl;
 
-    map<string, int> m;
-    map<string, int>::iterator it;
+	vector<pair<string, int>>vP;
+	vP.push_back(make_pair("Sourav", 63));
+	vP.push_back(make_pair("Adnan", 31));
+	cout << vP[0].first;
 
-    m["diptp"] = 12;
-    m["arnob"] = 100;
-    cout << m["diptp"] << endl;
-
-    m.insert(make_pair("sourav", 63));
-    it = m.begin();
-
-
-    cout << it->first << endl;
-    cout << it->second << endl;
-
-
-    for (it = m.begin(); it != m.end(); it++)
-    {
-        cout << it->first << " ";
-        cout << it->second << endl;
-
-
-    }
-    return 0;
+	sort(vP.rbegin(), vP.rend());
+	for (int i = 0; i < vP.size(); i++)
+	{
+		cout << vP[i].first << " " << vP[i].second << endl;
+	}
+	return 0;
 }
 
 /*
-    Documentation
-    map uses unique key and not unique value
-    key ta sort hoye jabe
-
-    https://www.youtube.com/watch?v=fGCJIOWANIg
+	Documentation
+	https://www.youtube.com/watch?v=9dCd_5bYhRg
 */
 /*
 Number of digits in N =floor(log10(N)) + 1;
