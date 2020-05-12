@@ -60,10 +60,10 @@ int main()
 
 			//cout << hOfP << endl;
 
-			lli neededCard = (3 * hOfP * (hOfP - 1) ) / 2 + hOfP * 2;
-			//cout << neededCard << endl; pt;
+			lli neededCard = (3 * hOfP * (hOfP - 1) ) / 2 + hOfP *
+			                 //cout << neededCard << endl; pt;
 
-			if (neededCard == n)
+			                 if (neededCard == n)
 			{
 				ans++;
 				break;

@@ -26,24 +26,71 @@ template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++
 int main()
 {
 	Sourav;
+ #ifndef ONLINE_JUDGE
+			freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+			freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+ #endif
 
-	set<int> s;
-	s.insert(10);
-	s.insert(10);
-	s.insert(10);
-	s.insert(10);
 
-	for (int  i = 0; s[i] != s.end(); i++)
+	set<int,greater<int>> s; //reverse sorted // or, set<int ,__greater>s;
+
+
+	s.insert(10);
+	s.insert(10);
+	s.insert(100);
+	s.insert(11);
+	s.insert(12);
+
+	for (const auto& i:s )
 	{
-		cout << s[i] << endl;
+		cout<<i<<endl;
 	}
+	// or use iterator
+s.insert(1000);
+cout<<"using iterator"<<endl;
+	set<int>::iterator it;
+	for(it=s.begin();it!=s.end();it++)
+	{
+		cout<<*it<<endl;
+	}
+	
+	set<int >s2(s.begin(),s.end()); //coping
+
+	//same iterator can be used
+cout<<"s2"<<endl;
+//cout<<s2[0]<<endl; eta kora jabe na
+	for (it=s2.begin();it!=s2.end();it++)
+	{
+		cout<<*it<<endl;
+	}
+s2.erase(12);
+cout<<"s.erase(12)"<<endl;
+for (it=s2.begin();it!=s2.end();it++)
+	{
+		cout<<*it<<endl;
+	}
+	
+s2.insert(1000);s2.insert(134);
+
+cout<<"print rev"<<endl;
+
+ for(auto i=s2.rbegin();i!=s2.rend();i++)
+ {
+	 cout<<*i<<endl;
+ }
 
 
-	return 0;
+ cout<<"dlt every thing to 134"<<endl;
+ s2.erase(s2.begin(),s2.find(134));
+ //        sstart pos , koy ghor jabe;
 
+ for(auto i=s2.begin();i!=s2.end();i++)
+ {
+	 cout<<*i<<endl;
+ }
 
-
-}
+return 0;
+ }
 
 /*
 	Documentation

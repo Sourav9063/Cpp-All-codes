@@ -27,8 +27,23 @@ int main()
                 freopen("C:\\Users\\my_code\\output.in", "w", stdout);
      #endif
      
-
-
+ #ifndef ONLINE_JUDGE
+            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+ #endif
+  if (/* condition */)
+  {
+    /* code */
+  }
+  else if (/* condition */)
+  {
+    /* code */
+  }
+  else
+  {
+    /* code */
+  }
+  
 
   return 0;
 }

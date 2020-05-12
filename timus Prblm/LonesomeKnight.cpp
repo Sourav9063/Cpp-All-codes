@@ -1,107 +1,100 @@
-// Name:
-#include<bits/stdc++.h>
+//                      Name:
+#include <bits/stdc++.h>
 using namespace std;
-// __int64 variable; cin cout diye
-// __uint64 variable;
-#define lli long long int //lld
+
+#define lli long long int			//lld
 #define ulli unsigned long long int //llu
-#define db double //lf
-#define Ld long double //Lf
-#define pf printf
-#define sf scanf
-#define nl printf("\n")
-#define plf(a) printf("%lld",a)
-#define slf(b) scanf("%lld",&b)
-#define puf(a) printf("%llu",a)
-#define suf(b) scanf("%llu",&b)
-#define pif(a) printf("%d",a)
-#define sif(b) scanf("%d",&b)
-#define pff(a) printf("%f",a)
-#define sff(b) scanf("%f",&b)
-#define pLf(a) printf("%Lf",a)
-#define sLf(b) scanf("%Lf",&b)
-#define pdf(a) printf("%lf",a)
-#define sdf(b) scanf("%lf",&b)
 
-#define s2f(a,b) scanf("%d%d",&a,&b)
-#define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
+#define pt cout << "*" << endl;
+#define nl cout << endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
-#define pb(a) push_back(a);
-#define all(v) v.begin(),v.end()
+#define pb(a) emplace_back(a)
+#define all(x) (x).begin(), (x).end()
+#define rSort(x) sort((x).rbegin(), (x).rend())
 
-#define max(a, b) ((a) > (b) ? (a) :(b))
-#define min(a, b) ((a) < (b) ? (a) :(b))
+#define Sourav                        \
+	ios_base::sync_with_stdio(false); \
+	cin.tie(NULL);                    \
+	cout.tie(NULL);
 
-#define fr(n) for(int i=0;i<n;i++)
-#define fr1(n) for(int i=1;i<=n;i++)
-
-
-#define pt printf(" * \n")
-
-const double pie = 2 * acos(0.0);
-const long long mxl = 1000000007;
-
-template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
-
-template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
-
-
+template <typename... T>
+void read(T &... args)
+{
+	((cin >> args), ...);
+}
+template <class T>
+inline void sarray(T *st, T *nd)
+{
+	while (st < nd)
+		cin >> *st++; /*sf("%d", st++);*/
+}
+template <class T>
+inline void parray(T *st, T *nd)
+{
+	while (st < nd)
+		cout << *st++ << endl; /*sf("%d", st++);*/
+}
 
 int main()
 {
+	Sourav;
+#ifndef ONLINE_JUDGE
+	freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+	freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+#endif
+
 	int t;
-	sif(t);
+	cin >> t;
+
+	char pos[3];
+	int drp[] = {-2, -2, -1, -1, 1, 1, 2, 2};
+	int dsp[] = {-1, 1, -2, 2, -2, 2, -1, 1};
 	while (t--)
 	{
-		char in;
-		int num;
-		sf("%c", &in);
-		sif(num);
-		pif(num);
-		pf("%c", in);
-		nl;
-		if ((in >= 'c' && in <= 'f') && (num >= 3 && num <= 6))
+		cin >> pos;
+		int r = pos[0] - 'a';
+		int c = pos[1] - '1'; //int value te nilam
+		int ans = 0;
+		for (int i = 0; i < 8; i++)
 		{
-			pf("8"); nl;
-		}
-		else
-		{
-			//pt;
-		}
+			int r2 = r + drp[i], c2 = c + dsp[i];
 
+			if (r2 >= 0 && r2 < 8 && c2 >= 0 && c2 < 8)
+				++ans;
+		}
+		cout << ans<<endl;
 	}
-
-
 
 	return 0;
 }
 
 /*
-	Documentation
-	manually kortesi
+  Documentation
+   
+*/
+/*
+map<lli, bool>m;
+  m[1000000000000000000] = 1;
 
+
+  // loop 
+  for(auto n:arrayname/anything)
+  {
+  
+  }
+Number of digits in N =floor(log10(N)) + 1;
+n = n << 1;   // Multiply n with 2  use >> for div
 */
 
+/*
+int power_x(int x, unsigned y)
+{
+	if(y==0)
+		return 1;
+	if(!(y&1))
+		return power_x(x,y>>1)*power_x(x,y>>1);
+	return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
-/* Assign vector
-    vector<int> v;
-
-     fill the array with 10 five times
-    v.assign(5, 10);
-
-     // inserts 5 at the beginning
-    v.insert(v.begin(), 5);
-
-
-    // removes the first element
-    v.erase(v.begin());
-
-       // erases the vector
-    v.clear();
-
-     // inserts at the beginning and extends the vector
-    v.emplace(v.begin(), 5);
-
-    // string to int / array to int
-    int a=stoi(a); / int a=atoi(a);
 */
