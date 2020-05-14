@@ -1,124 +1,90 @@
-//                      Name:
+//                      Name: 
 #include<bits/stdc++.h>
 using namespace std;
 
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
-#define db double //lf
-#define Ld long double //Lf
 
 #define pt cout<<"*"<<endl;
 #define nl cout<<endl;
-
-#define s2f(a,b) scanf("%d%d",&a,&b)
-#define s3f(a,b,c) scanf("%d%d%d",&a,&b,&c)
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
-#define Sort(x)  sort(all((x)))
 #define rSort(x) sort((x).rbegin(),(x).rend())
 
-#define Sourav ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-template <class T>inline void sarray(T* st, T* nd) {while (st < nd)cin >> *st++;/*sf("%d", st++);*/}
-template <class T>inline void parray(T* st, T* nd) {while (st < nd)cout << *st++ << endl;/*sf("%d", st++);*/}
-vector<ulli>vPrime;
-
+//template<typename... T>void read(T&... args) {((cin >> args), ...);}
+template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
+template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 
 int main()
 {
 	Sourav;
+ #ifndef ONLINE_JUDGE
+			freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+			freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+ #endif
 
-
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		int n, k;
-		cin >> n >> k;
-		int arr[n] = {0};
-		int flag[n] = {0};
-
-		for (int i = 0; i < n; i++)
-		{
-			cin >> arr[i];
-			flag[arr[i]]++;
-
+int t;
+	cin>>t;
+	while (t--){
+		int n,k;
+		cin>>n>>k;
+		int a;
+		set<int >s;
+		for (int i=0;i<n;i++){
+			cin>>a;
+			s.insert(a);
 		}
-
-
-		sort(arr, arr + n);
-		sort(flag, flag + n);
-		//	cout << flag[n - 1] << " " << arr[n - 1] << endl;
-
-		int tmpfirst = arr[n - 1];
-		bitset<10000>unik;//all 0
-		vector<int>uv;
-
-		for (int i = 0; i < n; i++)
-		{
-			if (unik[arr[i]] == 0) {uv.push_back(arr[i]); unik[arr[i]] = 1;}
-
-
-
+		if(s.size()>k){
+			cout<<"-1"<<endl;
+			continue;
 		}
-
-		int vecSize = uv.size();
-
-		if ( k < vecSize)cout << "-1" << endl;
-		else if (arr[0] == 1)
-		{
-			cout << (k * flag[n - 1] ) + k << endl;
-			for (int i = 0; i <= flag[n - 1]; i++)
-			{
-				for (int j = -1; j < k - 1; j++)
-				{
-					cout << tmpfirst - j << " ";
-				}
-			}
-			nl;
-
+		cout<<n*k<<endl;
+		for (int i=0;i<n;i++){
+			for (int b:s)cout<<b<<" ";
+			for (int j=0;j<k-s.size();j++)cout<<"1"<<" ";
 		}
-		else
-		{
-			cout << (k * flag[n - 1] ) + k << endl;
-			for (int i = 0; i <= flag[n - 1]; i++)
-			{
-				for (int j = 0; j < k; j++)
-				{
-					cout << tmpfirst - j << " ";
-				}
-			}
-			nl;
-		}
-
-
-
-
-
-		// //parray(uv, uv + vecSize);
-		// for (int i = 0; i < vecSize; i++)
-		// {
-		// 	cout << uv[i] << endl;
-		// } pt;
-
+		cout<<endl;
 	}
+	
+	
+return 0;
 
 
 
 
-
-
-
-	return 0;
+  return 0;
 }
 
 /*
-	Documentation
-
+  Documentation
+   
 */
 /*
+map<lli, bool>m;
+  m[1000000000000000000] = 1;
+
+
+  // loop 
+  for(auto n:arrayname/anything)
+  {
+  
+  }
 Number of digits in N =floor(log10(N)) + 1;
-n = n << 1;   // Multiply n with 2
-n = n >> 1;   // Divide n by 2
+n = n << 1;   // Multiply n with 2  use >> for div
+*/
+
+/*
+int power_x(int x, unsigned y)
+{
+	if(y==0)
+		return 1;
+	if(!(y&1))
+		return power_x(x,y>>1)*power_x(x,y>>1);
+	return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
+
 */

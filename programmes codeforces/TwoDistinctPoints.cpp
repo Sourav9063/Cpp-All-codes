@@ -1,12 +1,5 @@
 //                      Name: 
-#pragma optimization_level 3
-#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
-#pragma GCC optimize("Ofast")//Comment optimisations for interactive problems (use endl)
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimization ("unroll-loops")
 #include<bits/stdc++.h>
-//#include <boost/math/common_factor.hpp> 
 using namespace std;
 
 #define lli long long int //lld
@@ -28,26 +21,38 @@ template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl
 
 int main()
 {
-    
     Sourav;
-     #ifndef ONLINE_JUDGE
-                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-     #endif
-    
-    
-lli n,a,ans=0,y;
-    cin>>n;
-    cin>>a;
-    lli x=a;
-    for(lli i=1;i<n;i++)
+ #ifndef ONLINE_JUDGE
+            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+ #endif
+
+
+ int t;
+ cin>>t;
+    while(t--)
     {
-        cin>>a;
-        y=(x*a)/__gcd(x,a);
-        ans=__gcd(ans,y);
-        x=__gcd(a,x);
+      int l1,r1,l2,r2;
+      read(l1,r1,l2,r2);
+    if (r1==l2)
+    {
+       if(l1!=r1)
+       {
+           r1--;
+       }
+       else
+       {
+           l2++;
+       }
+       
     }
-    cout<<ans<<endl;
+    cout<<r1<<" "<<l2<<endl;
+    
+    }  
+
+
+
+
 
   return 0;
 }

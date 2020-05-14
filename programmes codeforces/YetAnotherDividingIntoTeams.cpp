@@ -1,12 +1,5 @@
 //                      Name: 
-#pragma optimization_level 3
-#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
-#pragma GCC optimize("Ofast")//Comment optimisations for interactive problems (use endl)
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimization ("unroll-loops")
 #include<bits/stdc++.h>
-//#include <boost/math/common_factor.hpp> 
 using namespace std;
 
 #define lli long long int //lld
@@ -22,13 +15,12 @@ using namespace std;
 
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-template<typename... T>void read(T&... args) {((cin >> args), ...);}
+//template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 
 int main()
 {
-    
     Sourav;
      #ifndef ONLINE_JUDGE
                 freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
@@ -36,18 +28,40 @@ int main()
      #endif
     
     
-lli n,a,ans=0,y;
-    cin>>n;
-    cin>>a;
-    lli x=a;
-    for(lli i=1;i<n;i++)
+     int t;
+     cin>>t;
+        while(t--)
+        {
+            int n;
+cin>>n;
+int arr[n];
+sarray(arr,arr+n);
+sort(arr,arr+n);
+bool f=false;
+int ans=1;
+for (int i = 1; i < n; i++)
+{
+    if(arr[i]-1==arr[i-1])
     {
-        cin>>a;
-        y=(x*a)/__gcd(x,a);
-        ans=__gcd(ans,y);
-        x=__gcd(a,x);
+// ans++;
+f=true;
+break;
     }
-    cout<<ans<<endl;
+    // else if(arr[i]-1!=arr[i-1])
+    // {
+    //     f=false;
+
+    // }
+}
+
+
+
+cout<<(f?"2":"1")<<endl;
+          
+    
+        }  
+    
+
 
   return 0;
 }
