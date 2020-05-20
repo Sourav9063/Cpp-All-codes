@@ -1,13 +1,13 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/721/A
 #include<bits/stdc++.h>
 using namespace std;
 
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -27,10 +27,30 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
+string s;
+int n;
+cin>>n>>s;
+vector<int>v;
+for (int i = 0; i < n; i++)
+{
+    
+    if(s[i]=='B')
+    {
+        ans++;
+        tmp=i;
+        while(s[tmp]=='B')tmp++;
+  //  deb(tmp-i);
+        v.pb(tmp-i);
+        i=tmp;
+    }
+}
+cout<<ans<<endl;
 
+for (int i = 0; i < v.size(); i++)
+{
+    cout<<v[i]<<" ";
+}
 
 
 

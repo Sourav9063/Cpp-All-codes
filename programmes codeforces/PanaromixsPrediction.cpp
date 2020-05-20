@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -19,19 +19,58 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 lli tmp,ans;
+vector<ulli>vPrime;
+
+void seive()
+{
+    ulli n = 1000;
+//suf(n);
+  bitset<10000000>arr;
+    arr.flip();
+    arr[1] = 0;
+    for (ulli p = 2; p * p <= n; p++)
+    {
+        if (arr[p])
+        {
+            for (ulli i = p * p; i <= n; i += p)
+            {
+                arr[i] = 0;
+            }
+        }
+    }
+// parray(arr,arr+(n+1));
+    for (ulli p = 1; p <= n; p++)
+    {
+        if (arr[p])
+        {
+            vPrime.pb(p);
+//cout<<p<<endl;
+        }
+    }
+}
 
 int main()
 {
     Sourav;
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-int a;
-pt nl deb(a)
+     #ifndef ONLINE_JUDGE
+                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+     #endif
+    
+    
+seive();
+int n,m;
+cin>>n>>m;
+bool flag=false;
+for (int i = 0; i < n; i++)
+{
+    if(vPrime[i]==n)
+    {
+        if(vPrime[i+1]==m)flag=true;
+    }
+}
 
-
-
+cout<<(flag?"YES":"NO")<<endl;
 
 
   return 0;

@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -20,6 +20,39 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 lli tmp,ans;
 
+int dist[200010];
+void bfs(map<int,vector<int>>&adj,int s)
+{
+  queue<int>lst;
+
+  dist[s]=0;
+  lst.push(s);
+  while (!lst.empty())
+  {
+    int standingNode=lst.front();
+    lst.pop();
+    for (int i = 0; i < adj[standingNode].size(); i++)
+    {
+      int nextNode=adj[standingNode][i];
+      if(dist[nextNode]==0)
+      {
+        dist[nextNode]=dist[standingNode]+1;
+        lst.push(nextNode);
+      }
+
+    }
+    
+
+  }
+  
+  
+
+
+
+}
+
+
+
 int main()
 {
     Sourav;
@@ -27,8 +60,32 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+
+ int t;
+ cin>>t;
+    while(t--)
+    {
+      map<int,vector<int>>adj;
+      int nodes,edges;
+      cin>>nodes>>edges;
+      for (int i = 0; i < edges; i++)
+      {
+        int x,y;
+        cin>>x>>y;
+        adj[x].pb(y);
+        adj[y].pb(x);
+
+      }
+for (int i = 0; i < nodes+1; i++)
+{
+  dist[i]=0;
+}
+
+bfs(adj,1);
+      
+cout<<dist[nodes]<<endl;
+    }  
 
 
 

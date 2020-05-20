@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -27,8 +27,32 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+int w=0,b=0;
+char as;
+for (int i = 0; i < 64; i++)
+{
+    cin>>as;
+    if(as=='Q')w+=9;
+    else if (as=='R')w+=5;
+    else if (as=='B')w+=3;
+    else if (as=='N')w+=3;
+    else if (as=='P')w+=1;
+   else if(as=='q')b+=9;
+    else if (as=='r')b+=5;
+    else if (as=='b')b+=3;
+    else if (as=='n')b+=3;
+    else if (as=='p')b+=1;
+   else continue;
+}
+// deb(w)deb(b);
+
+if(w==b)cout<<"Draw"<<endl;
+else if(w>b)cout<<"White"<<endl;
+else
+{
+    cout<<"Black"<<endl;
+}
 
 
 

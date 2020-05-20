@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -18,7 +18,7 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
+int tmp,ans;
 
 int main()
 {
@@ -27,11 +27,23 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
 
+int n;
+cin>>n;
+set<pair<int,int>>s;
+int arr[24][60]={0};
 
+for (int i = 0; i < n; i++)
+{
+    int a,b;
+    cin>>a>>b;
+    arr[a][b]++;
+ans=max(ans,(arr[a][b]));
+    // s.insert(make_pair(a,b));
+}
+cout<<ans<<endl;
+// cout<<n-s.size()+1<<endl;
 
 
   return 0;

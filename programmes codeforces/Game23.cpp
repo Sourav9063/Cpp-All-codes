@@ -1,13 +1,13 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1141/A
 #include<bits/stdc++.h>
 using namespace std;
 
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -18,7 +18,6 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
 
 int main()
 {
@@ -27,8 +26,34 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+int a,b;
+cin>>a>>b;
+int ans=0;
+if(b%a!=0)cout<<-1<<endl;
+else
+{
+  while(a<b)
+  {
+    if(b%(a*2)==0)
+    {
+      a*=2;
+    
+
+    }
+    else
+    {
+      a*=3;
+    }
+    ans++;
+  }
+if(a==b)cout<<ans<<endl;
+else
+{
+  cout<<-1<<endl;
+}
+
+}
 
 
 

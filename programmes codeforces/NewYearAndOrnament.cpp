@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -23,13 +23,16 @@ lli tmp,ans;
 int main()
 {
     Sourav;
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-int a;
-pt nl deb(a)
+     #ifndef ONLINE_JUDGE
+                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+     #endif
+    
+    
+int y,b,r;
+cin>>y>>b>>r;
 
+cout<<min(y*3+3,min(b*3,r*3-3));
 
 
 

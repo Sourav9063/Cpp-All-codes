@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -18,7 +18,6 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
 
 int main()
 {
@@ -27,8 +26,20 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+lli n;
+cin>>n;
+lli tmp;
+for (lli i = 0; i < n; i++)
+{
+    cin>>tmp;
+    if(tmp%2==0)cout<<tmp-1<<" ";
+    else
+    {
+        cout<<tmp<<" ";
+    }
+    
+}
 
 
 
@@ -39,7 +50,7 @@ pt nl deb(a)
 
 /*
   Documentation
-   
+   even =even -1;
 */
 /*
 map<lli, bool>m;

@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -15,10 +15,9 @@ using namespace std;
 
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-//template<typename... T>void read(T&... args) {((cin >> args), ...);}
+template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
 
 int main()
 {
@@ -27,10 +26,21 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
 
+    int s,v1,v2,t1,t2;
+    read(s,v1,v2,t1,t2);
+
+    int time1=s*v1+2*t1;
+int time2=s*v2+2*t2;
+// deb(time1);
+// deb(time2);
+if(time1==time2)cout<<"Friendship"<<endl;
+else if(time1<time2)cout<<"First"<<endl;
+else
+{
+    cout<<"Second"<<endl;
+}
 
 
 

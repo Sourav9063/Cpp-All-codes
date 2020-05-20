@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1180/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -23,13 +23,14 @@ lli tmp,ans;
 int main()
 {
     Sourav;
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-int a;
-pt nl deb(a)
-
+     #ifndef ONLINE_JUDGE
+                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+     #endif
+    
+    
+cin>>tmp;
+cout<<tmp*tmp+(tmp-1)*(tmp-1)<<endl;
 
 
 
@@ -39,7 +40,7 @@ pt nl deb(a)
 
 /*
   Documentation
-   
+  centeer e n*n aar side e n-1*n-1 
 */
 /*
 map<lli, bool>m;

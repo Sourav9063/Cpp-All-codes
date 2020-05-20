@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -27,8 +27,37 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+ int t;
+ cin>>t;
+    while(t--)
+    {
+      ulli n,k;
+
+      cin>>n>>k;
+     int a,b;
+    
+    for (int i = 1; i < k; i++)
+    { 
+      a=0;b=10;
+       tmp=n;
+      // deb(n);
+      while(tmp>0)
+      {
+        int tmpa=tmp%10;
+        int tmpb=tmpa;
+        a=max(a,tmpa);
+        b=min(b,tmpb);
+        tmp/=10;
+
+      }
+      n+=(a*b);
+      if(b==0)break;
+    }
+    cout<<n<<endl;
+
+    }  
+
 
 
 

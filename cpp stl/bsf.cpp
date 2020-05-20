@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -19,7 +19,33 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 lli tmp,ans;
+vector<bool>visited;
+vector<vector<int>>Vec;
 
+void bfs(int node)
+{
+  queue<int>lst;
+  lst.push(node);
+  visited[node]=true;
+  
+  while(lst.empty())
+  {
+    node=lst.front();
+    lst.pop();
+    cout<<node<<" ";
+    for (int i = 0; i < Vec[node].size(); i++)
+    {
+      if(!visited[Vec[node][i]])
+      {
+        lst.push(Vec[node][i]);
+        visited[Vec[node][i]]=true;
+      }
+    }
+    
+  }
+
+
+}
 int main()
 {
     Sourav;
@@ -27,8 +53,8 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+
 
 
 
@@ -39,7 +65,8 @@ pt nl deb(a)
 
 /*
   Documentation
-   
+   breath first search
+    
 */
 /*
 map<lli, bool>m;

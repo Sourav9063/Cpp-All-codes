@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -15,10 +15,9 @@ using namespace std;
 
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-//template<typename... T>void read(T&... args) {((cin >> args), ...);}
+template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
 
 int main()
 {
@@ -27,8 +26,11 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+int n1,n2,k1,k2;
+read(n1,n2,k1,k2);
+cout<<((n1>n2?"First":"Second"))<<endl;
+
 
 
 
@@ -39,7 +41,8 @@ pt nl deb(a)
 
 /*
   Documentation
-   
+   throw niye kono prblm nai karon 1 to k shonkhok so sobai 1 ta korei char be karon j chalte parbe na she lose
+   only start e jar balls bese she jitbe
 */
 /*
 map<lli, bool>m;

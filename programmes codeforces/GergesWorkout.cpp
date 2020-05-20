@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -27,8 +27,27 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+int n;
+cin>>n;
+int arr[3]={0};
+for (int i = 1; i <= n; i++)
+{
+    cin>>tmp;
+    arr[i%3]+=tmp;
+}
+
+if(arr[0]>arr[1]&&arr[0]>arr[2])
+cout<<"back"<<endl;
+else if (arr[1]>arr[0]&&arr[1]>arr[2])
+{
+    cout<<"chest"<<endl;
+}
+else
+{
+    cout<<"biceps"<<endl;
+}
+
 
 
 

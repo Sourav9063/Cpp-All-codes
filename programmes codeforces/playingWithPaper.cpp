@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/527/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -27,9 +27,30 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
+ lli a,b,count=0;
+    cin>>a>>b;
+    while(a!=b)
+    {
+        if(a>b)
+        {
+ 
+            count +=(lli)ceil((double)(a-b)/b);
+            a = a - (b)*(lli)ceil((double)(a-b)/b);
+ 
+        }
+        else
+        {
+            count+= (lli)ceil((double)(b-a)/a);
+ 
+            b = b - a*(lli)ceil((double)(b-a)/a);
+ 
+        }
+ 
+    }
+ 
+ 
+    cout<<count+1;
 
 
 

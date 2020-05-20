@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1244/Aq
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -27,8 +27,23 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+
+ int t;
+ cin>>t;
+    while(t--)
+    {
+      float a,b,c,d,k;
+      cin>>a>>b>>c>>d>>k;
+
+      if(ceil(a/c)+ceil(b/d)<=k)cout<<ceil(a/c)<< " "<<ceil(b/d)<<endl;
+      else
+      {
+          cout<<-1<<endl;
+      }
+      
+
+    }  
 
 
 

@@ -18,7 +18,7 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
+lli ans;
 
 int main()
 {
@@ -27,8 +27,19 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+__int64 n,k,tmp;
+cin>>n>>k;
+
+tmp=n/k;
+
+if(tmp&1)cout<<"YES"<<endl;
+else
+{
+    cout<<"NO"<<endl;
+}
+
+
 
 
 

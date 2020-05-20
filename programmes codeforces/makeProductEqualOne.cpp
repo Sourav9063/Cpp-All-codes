@@ -5,9 +5,9 @@ using namespace std;
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -27,11 +27,59 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
+lli n;
+cin>>n;
+lli arr[n];
+sarray(arr,arr+n);
+lli ansp=0,zero=0;
+// for (int i = 0; i < n; i++)
+// {
+    
+//     if(arr[i]==0)
+//     {
+//         ansn++;
+      
+//     }
+//     else if(arr[i]>0)
+//     {
+//         ansn+=arr[i]+1;
+//     }
+//     else
+//     {
+//         ansn+=abs(arr[i]+1);
 
+//     }
+//     deb(ansn)
+    
+// }
 
+for (lli i = 0; i < n; i++)
+{
+    if(arr[i]==0)
+    {
+        //ansp++;
+        zero++;
+    }
+    else if (arr[i]>1)
+    {
+    ansp+=arr[i]-1   ;
+    }
+     else if(arr[i]<0)
+    {
+        ansp+=abs(arr[i])-1;tmp++;
+    }
+   // deb(ansp)
+    
+}
+ansp+=zero;
+
+if (tmp%2==1&&zero==0)
+{
+    ansp+=2;// aro 1 ta neg 1 k 1 korte hobe
+}
+
+cout<<ansp<<endl;
 
 
   return 0;

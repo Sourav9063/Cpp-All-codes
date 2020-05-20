@@ -1,13 +1,13 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/214/A
 #include<bits/stdc++.h>
 using namespace std;
 
 #define lli long long int //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
-#define deb(x) cout << #x << "=" << x << "\n";
+#define pt cout<<"*"<<endl;
+#define nl cout<<endl;
+#define deb(x) cout << #x << "=" << x << endl;
 
 #define pb(a)    emplace_back(a)
 #define all(x)   (x).begin(),(x).end()
@@ -23,15 +23,22 @@ lli tmp,ans;
 int main()
 {
     Sourav;
+
  #ifndef ONLINE_JUDGE
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
 
+    int n,m;
+    cin>>n>>m;
 
-
+    for (int i = 0; i*i <= n; i++)
+    {
+        int tmp=n-i*i;
+        if(m==tmp*tmp+i)ans++;
+    }
+    
+cout<<ans<<endl;
 
 
   return 0;

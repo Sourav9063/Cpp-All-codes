@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1102/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -27,8 +27,15 @@ int main()
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-int a;
-pt nl deb(a)
+
+lli n;
+cin>>n;
+tmp=((n+1)*n)/2;
+if(tmp&1)cout<<1<<endl;
+else
+{
+    cout<<0<<endl;
+}
 
 
 
