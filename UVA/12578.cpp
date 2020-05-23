@@ -1,9 +1,9 @@
-//                      Name: https://codeforces.com/problemset/problem/515/C
+//                      Name: 
 #include<bits/stdc++.h>
 using namespace std;
 
-#define lli long long int //lld
-#define ulli unsigned long long int //llu
+#define ll long long int //lld
+#define ull unsigned long long int //llu
 
 #define pt cout<<"*"<<"\n";
 #define nl cout<<"\n";
@@ -18,7 +18,7 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
+ll tmp,ans;
 
 int main()
 {
@@ -28,73 +28,27 @@ int main()
                 freopen("C:\\Users\\my_code\\output.in", "w", stdout);
      #endif
     
-    
-    int n;
-    cin>>n;
-    lli in;
-    cin>>in;
-    int arr[10]={0};
+  
+    double pi=acos(-1);
 
-    tmp=in;
-    while(tmp>0)
-    {
-        int x=tmp%10;
-        tmp/=10;
-    //     arr[x]++;
-    //  while(x--)
-    //  {
-    //      arr[x]++;
-    //  }
-        if(x==2)arr[x]++;
-        else if (x==3)
-        {
-            arr[x]++;
-        }
-        else if (x==4)
-        {
-            arr[3]++;
-            arr[2]+=2;
-        }
-        else if (x==5)
-        {
-            arr[x]++;
-        }
-        else if (x==6)
-        {
-            arr[x-1]++;
-            arr[x-3]++;
-        }
-        else if (x==7)
-        {
-            arr[x]++;
-
-        }
-        else if (x==8)
-        {
-            arr[x-1]++;
-            arr[2]+=3;
-        }
-        else if (x==9)
-        {
-            arr[7]++;
-            arr[3]+=2;
-            arr[2]++;
-        }
-        
-        
-        
-
-    }
     
-for (int i = 9; i>1; i--)
-{
+     int t;
+     cin>>t;
+        while(t--)
+        {
+         int l;
+    cin>>l;
+        double w=6*(l/10);
+double area1=w*l;
+double r=l/5;
+double areaR=pi*r*r;
+area1-=areaR;
+        
+    printf("%.2lf %.2lf\n",areaR,area1);
     
-    for (int j = 0; j < arr[i]; j++)
-    {
-        cout<<i;
-    }
+        }  
     
-}
+    
 
 
 

@@ -1,58 +1,66 @@
-//                      Name: 
-#include<bits/stdc++.h>
+//                      Name:
+#include <bits/stdc++.h>
 using namespace std;
 
-#define lli long long int //lld
+#define lli long long int           //lld
 #define ulli unsigned long long int //llu
 
-#define pt cout<<"*"<<endl;
-#define nl cout<<endl;
+#define pt cout << "*" << endl;
+#define nl cout << endl;
 #define deb(x) cout << #x << "=" << x << endl;
 
-#define pb(a)    emplace_back(a)
-#define all(x)   (x).begin(),(x).end()
-#define rSort(x) sort((x).rbegin(),(x).rend())
+#define pb(a) emplace_back(a)
+#define all(x) (x).begin(), (x).end()
+#define rSort(x) sort((x).rbegin(), (x).rend())
 
-#define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define Sourav                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(NULL);                    \
+  cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-lli tmp,ans;
-map<int,vector<int>>adj;
-
-
-int main()
+template <class T>
+inline void sarray(T *st, T *nd)
 {
-    Sourav;
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-
-
-int n,m;
-cin>>n>>m;
-int cat[n];
-for (int i = 0; i < n; i++)
-{
-  cin>>cat[i];
+  while (st < nd)
+    cin >> *st++; /*sf("%d", st++);*/
 }
-int x,y;
-for (int i = 0; i < n-1; i++)
+template <class T>
+inline void parray(T *st, T *nd)
 {
-  cin>>x>>y;
-  adj[x].pb(y);
+  while (st < nd)
+    cout << *st++ << endl; /*sf("%d", st++);*/
 }
 
-
-
-
-
-
-  return 0;
+vector<int> v[100001];
+int n, m, x, y, a[100001], b[100001], i = 1, c, p;
+void dfs(int k)
+{
+  b[k]++;
+  int z = 0;
+  if (a[k])
+    a[k] += c;
+  if (a[k] > m)
+    return;
+  for (int j = v[k].size(); j--;)
+    if (!b[v[k][j]])
+      z = 1, c = a[k], dfs(v[k][j]);
+  if (!z)
+  {
+    p++;
+    return;
+  }
 }
-
+main()
+{
+  cin >> n >> m;
+  for (; i <= n; i++)
+    cin >> a[i];
+  for (i = 1; i < n; i++)
+    cin >> x >> y, v[x].push_back(y), v[y].push_back(x);
+  dfs(1);
+  cout << p;
+}
 /*
   Documentation
    
