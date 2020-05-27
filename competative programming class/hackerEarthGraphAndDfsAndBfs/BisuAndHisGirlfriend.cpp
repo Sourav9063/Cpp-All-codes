@@ -32,33 +32,29 @@ inline void parray(T *st, T *nd)
     while (st < nd)
         cout << *st++ << endl; /*sf("%d", st++);*/
 }
-ll ans;
-map<int, vector<int>> adj;
 
-bool visited[1000000];
 
-int dfs(int s, int tmp)
+vector< int > adj[1001];
+vector< bool >visited(1000,false);
+int dsit[1001];
+
+void dfs(int s)
 {
-    int stp = 0;
-    visited[s] = true;
-    stack<int> st;
-    st.push(s);
-    stp++;
-    while (!st.empty())
-    {
-        stp++;
-        int standingNode = st.top();
-        st.pop();
-        for (int i = 0; i < adj[standingNode].size(); i++)
-        {
-            int nxtNodes = adj[standingNode][i];
+   // memset(dsit,0,sizeof(dsit));
 
-            if (visited[nxtNodes] == false)
-            {
-                st.push(nxtNodes);
-                visited[nxtNodes] = false;
-                if (nxtNodes == tmp)
-                    return stp;
+    stack < int > st;
+    st.push(s);
+    dsit[s] = 0;
+
+    while(!st.empty()){
+        int u = st.top();
+        st.pop();
+        for(int i = 0; i < adj[u].size() ; i++){
+            int v = adj[u][i];
+
+            if(v > dsit[u]+1){
+                dsit[v] = dsit[u]+1;
+                st.push(v);
             }
         }
     }
@@ -66,49 +62,29 @@ int dfs(int s, int tmp)
 
 int main()
 {
-    Sourav;
-#ifndef ONLINE_JUDGE
-    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-#endif
-
-    int n;
+    int n,m;
     cin >> n;
-    for (int i = 1; i < n; i++)
-    {
-        int x, y;
+    for(int i = 0; i < n-1; i++){
+        int x,y;
         cin >> x >> y;
-        adj[x].pb(y);
-        adj[y].pb(x);
+        // if undirected graph
+        adj[x].push_back(y);
+        adj[y].push_back(x); // if directed graph not needed this line
     }
-
-    for (int i = 0; i < n + 1; i++)
-    {
-        visited[i] = false;
-    }
-
-    int g;
-    cin >> g;
-    int arr[g];
-    for (int i = 0; i < g; i++)
-    {
-        cin >> arr[g];
-    }
-    sort(arr, arr + n);
-    int chk = LONG_MAX;
-    int gp;
-    for (int i = 0; i < g; i++)
-    {
-        //    tmp = arr[i];
-        ans = dfs(1, arr[i]);
-
-        if (ans < chk)
-        {
-            chk = ans;
-            gp = arr[i];
+    int res = INT_MAX,q,ans=0;
+    cin >> q;
+    int mal;
+    dfs(1);
+    for(int i = 0;i < q; i++){
+        cin >> mal;
+        if(dsit[mal] < res){
+            res = dsit[mal];
+            ans = mal;
+        }else if(res == dsit[mal]){
+            ans = min(ans,mal);
         }
-    }
-    cout << gp << endl;
+      }
+    cout << ans << endl;
 
     return 0;
 }
