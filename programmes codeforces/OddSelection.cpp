@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/1363/problem/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +29,36 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      ll n,x;
+      cin>>n>>x;
+      ll a[n];
+      ll odd=0,even=0;
+      for (int i = 0; i < n; i++)
+      {
+          cin>>a[i];
+          if(a[i]%2==1)odd++;
+          else
+          {
+              even++;
+          }
+          
+      }
+      
+    //   double dx=x;
+    //   ll tx=ceil(dx/2);
+      
+     if((even==0&&x%2==0)||odd==0||x>n||(n==x&&odd%2==0))cout<<"NO"<<endl;
+     else cout<<"YES"<<endl;
+    
+    
+      
+
+    }  
 
 
 

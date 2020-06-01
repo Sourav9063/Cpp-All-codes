@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1144/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -30,6 +30,22 @@ Sourav;
  #endif
 
 
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      string s;
+      cin>>s;
+      sort(all(s));
+      bool f=true;
+      for (int i = 1; i < s.size(); i++)
+      {
+          if(s[i]!=s[i-1]+1)f=false;
+      }
+      cout<<(f?"YES":"NO");nl
+
+    }  
+
 
 
 
@@ -41,5 +57,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

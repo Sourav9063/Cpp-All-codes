@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/999/B
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,7 +29,15 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-
+int n;
+	string s;
+	cin >> n >> s;
+	for (int i = 1; i <= n; ++i) {
+		if (n % i == 0) {
+			reverse(s.begin(), s.begin() + i);
+		}
+	}
+	cout << s << endl;
 
 
 
@@ -41,5 +49,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/1363/problem/B
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +29,35 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      string s;
+      cin>>s;
+      ll siz=s.size();
+    char f=s[0],l=s[siz-1];
+ll zeros=0,ones=0;
+for (int i = 0; i < siz; i++)
+{
+    if(s[i]=='1')ones++;
+    else zeros++;
+}
+
+ if ((f=='1'||l=='1'))
+{
+    cout<<min(ones-1,zeros)<<endl;
+}
+else
+{
+    
+    cout<<min(zeros,ones)<<endl;
+}
+
+
+
+    }  
 
 
 

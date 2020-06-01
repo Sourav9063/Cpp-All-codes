@@ -30,6 +30,21 @@ Sourav;
  #endif
 
 
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      ll a[3];
+      cin>>a[0]>>a[1]>>a[2];
+      sort(a,a+3);
+a[0]++;
+a[2]--;
+
+cout<<max(tmp,2*(a[2]-a[0]));nl
+
+
+    }  
+
 
 
 
@@ -41,5 +56,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

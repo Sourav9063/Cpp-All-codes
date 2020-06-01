@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1061/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,7 +29,10 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-
+double n,s;
+cin>>n>>s;
+ans=ceil(s/n);
+cout<<ans<<endl;
 
 
 
@@ -41,5 +44,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

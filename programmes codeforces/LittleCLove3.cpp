@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1047/A  
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +29,17 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+ll n;
+cin>>n;
+
+if(n%3==0||n%3!=2){cout<<1<<" "<<1<<" "<<n-2;}
+
+
+else
+{
+    cout<<1<<" "<<2<<" "<<n-3;
+}
+nl
 
 
 
@@ -41,5 +52,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

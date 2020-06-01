@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/798/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,7 +29,20 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+string s;
+cin>>s;
+int c=0;
+for (int i = 0,j=s.size()-1; i < s.size()/2; i++,j--)
+{
+    // deb(s[i])deb(s[j])
+    if(s[i]!=s[j])c++;
+}
+if(c==0&&s.size()%2)cout<<"YES"<<endl;
+else
 
+    
+
+cout<<(c==1?"YES":"NO")<<endl;
 
 
 
@@ -39,7 +52,7 @@ Sourav;
 
 /*
   Documentation:
-   
+  check and count 
 
 
 */

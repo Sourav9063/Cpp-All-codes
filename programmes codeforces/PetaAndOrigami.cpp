@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/1080/A  
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,9 +29,15 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+double n,k;
+cin>>n>>k;
+double nr=n*2,ng=n*5,nb=n*8;
 
+ans+=ceil((nb/k));
+ans+=ceil((ng/k));
+ans+=ceil((nr/k));
 
-
+cout<<ans<<endl;
 
 
   return 0;

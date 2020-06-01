@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/433/B
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +29,46 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+ll n;cin>>n;
+
+ll a[n]={0},sum[n]={0},soSum[n];
+ll ac[n];
+cin>>a[0];
+ac[0]=sum[0]=a[0];
+for (ll i = 1; i < n; i++)
+{
+    cin>>a[i];
+    ac[i]=a[i];
+    sum[i]=a[i]+sum[i-1];
+}
+
+sort(a,a+n);
+soSum[0]=a[0];
+for (int i = 1; i < n; i++)
+{
+    soSum[i]=a[i]+soSum[i-1];
+}
+
+//  parray(sum,sum+n);
+//  parray(soSum,soSum+n);
+
+
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      ll chk,l,r;
+      cin>>chk>>l>>r;
+      if(chk==1)
+      {
+          cout<<sum[r-1]-sum[l-1]+ac[l-1]<<endl;
+      }
+      else
+      {
+          cout<<soSum[r-1]-soSum[l-1]+a[l-1]<<endl;
+      }
+
+    }  
 
 
 

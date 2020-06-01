@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/1359/problem/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -30,6 +30,27 @@ Sourav;
  #endif
 
 
+ ll t;
+ cin>>t;
+    while(t--)
+    {
+      ll n,m,k;
+      cin>>n>>m>>k;
+      
+      ll cardOnes=n/k;
+      if(cardOnes>=m)cout<<m<<endl;
+  
+      else
+      {
+          ll nxtBigCards=ceil((float)(m-cardOnes)/(k-1));
+        //   deb(nxtBigCards)
+          cout<<cardOnes-nxtBigCards<<endl;
+      }
+      
+
+
+    }  
+
 
 
 
@@ -41,5 +62,14 @@ Sourav;
   Documentation:
    
 
+
+int power_x(int x, unsigned y)
+{
+    if(y==0)
+        return 1;
+    if(!(y&1))
+        return power_x(x,y>>1)*power_x(x,y>>1);
+    return x*power_x(x,y>>1)*power_x(x,y>>1);
+}
 
 */

@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/221/status/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +29,13 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
+ll n;
+cin>>n;
+cout<<n;
+for (int i = 1; i < n; i++)
+{
+    cout<<" "<<i;
+}
 
 
 
