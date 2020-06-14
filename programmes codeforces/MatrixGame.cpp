@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/1365/problem/A
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,36 +20,6 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 ll tmp,ans;
 
-vector<ull>vPrime;
-
-void seive()
-{
-    ull n = 100000;
-//suf(n);
-  bitset<10000000>arr;
-    arr.flip();
-    arr[1] = 0;
-    for (ull p = 1; p * p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            for (ull i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-vPrime.pb(2);
-    for (ull p = 1; p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-//cout<<p<<endl;
-        }
-    }
-}
-
 int main()
 {
 Sourav;
@@ -59,11 +29,17 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-seive();
+int n,m;
+cin>>n>>m;
+int a[n][m];
 
-for (int i = 0; i < 199; i++)
+for (int i = 0; i < n; i++)
 {
-  cout<<vPrime[i]<<endl;
+    for (int j = 0; j < m; j++)
+    {
+        cin>>a[i][j];
+    }
+    
 }
 
 

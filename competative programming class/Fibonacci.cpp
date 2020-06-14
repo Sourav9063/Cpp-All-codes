@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: Fibonacci recursive
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,34 +20,11 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 ll tmp,ans;
 
-vector<ull>vPrime;
-
-void seive()
-{
-    ull n = 100000;
-//suf(n);
-  bitset<10000000>arr;
-    arr.flip();
-    arr[1] = 0;
-    for (ull p = 1; p * p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            for (ull i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-vPrime.pb(2);
-    for (ull p = 1; p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-//cout<<p<<endl;
-        }
-    }
+ull fib(ull n){
+    if(n==1)return 1;
+    if(n==0)return 0; 
+    
+    return fib(n-1)+fib(n-2);
 }
 
 int main()
@@ -58,16 +35,13 @@ Sourav;
             freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
-
-seive();
-
-for (int i = 0; i < 199; i++)
-{
-  cout<<vPrime[i]<<endl;
-}
+ull n ;
+cin>>n;
 
 
+ull ans=fib(n);
 
+cout<<ans<<endl;
 
 
   return 0;

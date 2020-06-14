@@ -19,7 +19,6 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 ll tmp,ans;
-
 vector<ull>vPrime;
 
 void seive()
@@ -60,12 +59,6 @@ Sourav;
  #endif
 
 seive();
-
-for (int i = 0; i < 199; i++)
-{
-  cout<<vPrime[i]<<endl;
-}
-
 
 
 

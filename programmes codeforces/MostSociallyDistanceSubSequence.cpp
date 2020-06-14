@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/contest/1364/problem/B`
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,36 +20,6 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 ll tmp,ans;
 
-vector<ull>vPrime;
-
-void seive()
-{
-    ull n = 100000;
-//suf(n);
-  bitset<10000000>arr;
-    arr.flip();
-    arr[1] = 0;
-    for (ull p = 1; p * p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            for (ull i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-vPrime.pb(2);
-    for (ull p = 1; p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-//cout<<p<<endl;
-        }
-    }
-}
-
 int main()
 {
 Sourav;
@@ -59,13 +29,44 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-seive();
+ 
+  ll t;
+  cin>>t;
+     while(t--)
+     {
+       ll n;
+       cin>>n;
 
-for (int i = 0; i < 199; i++)
+       ll a[n];
+       vector<ll>anss;
+bool u=false,d=false;
+cin>>a[0];
+anss.pb(a[0]);
+       for (int i = 1; i < n; i++)
+       {
+           cin>>a[i];
+
+
+       }
+       
+    for (int i = 1; i < n-1; i++)
+    {
+        if(a[i-1]<a[i]&&a[i+1]<a[i])anss.pb(a[i]);
+        if(a[i-1]>a[i]&&a[i+1]>a[i])anss.pb(a[i]);
+    }
+    
+anss.pb(a[n-1]);
+
+cout<<anss.size()<<endl;
+for (int i = 0; i < anss.size(); i++)
 {
-  cout<<vPrime[i]<<endl;
+    cout<<anss[i]<<" ";
 }
+nl
 
+ 
+     }  
+ 
 
 
 

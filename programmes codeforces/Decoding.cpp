@@ -1,4 +1,4 @@
-//                      Name: 
+//                      Name: https://codeforces.com/problemset/problem/746/B
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,36 +20,6 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 ll tmp,ans;
 
-vector<ull>vPrime;
-
-void seive()
-{
-    ull n = 100000;
-//suf(n);
-  bitset<10000000>arr;
-    arr.flip();
-    arr[1] = 0;
-    for (ull p = 1; p * p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            for (ull i = p * p; i <= n; i += p)
-            {
-                arr[i] = 0;
-            }
-        }
-    }
-vPrime.pb(2);
-    for (ull p = 1; p <= n; p+=2)
-    {
-        if (arr[p])
-        {
-            vPrime.pb(p);
-//cout<<p<<endl;
-        }
-    }
-}
-
 int main()
 {
 Sourav;
@@ -59,14 +29,33 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-seive();
-
-for (int i = 0; i < 199; i++)
+int n;
+cin>>n;
+string s;
+cin>>s;
+string as=s;
+bool fl=false;
+for (int i = n-1,k=n-1,j=0; i>=0;i-- )
 {
-  cout<<vPrime[i]<<endl;
+    // deb(s[i])
+
+    if(fl==false){
+        as[k]=s[i];
+        k--;
+        fl=true;
+    }
+    else
+    {
+        as[j]=s[i];
+        j++;
+        fl=false;
+    }
+
+    // deb(as)
+    
 }
 
-
+cout<<as<<endl;
 
 
 
