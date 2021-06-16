@@ -42,6 +42,11 @@ for (ll i = 0; i < n; i++)
 rep[a[i]]++;
 if(rep[a[i]]>1)dup=true;
 
+int m;
+int c;
+m=m+c;
+
+
 
 mx=max(mx,a[i]);
     
