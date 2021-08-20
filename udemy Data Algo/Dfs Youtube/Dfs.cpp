@@ -30,10 +30,24 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
   while (st < nd)
-    cout << *st++ << " ";
-  nl /*sf("%d", st++);*/
+    cout << *st++ << endl; /*sf("%d", st++);*/
 }
 ll tmp, ans;
+
+#define mx 100005
+int visited[mx];
+vector<int> adj[mx];
+void dfs(int k){
+  if(!visited[k]){
+    deb(k)
+    visited[k] = 1;
+    for(auto i :adj[k]){
+      if(!visited[i]){
+        dfs(i);
+      }
+    }
+  }
+}
 
 int main()
 {
@@ -43,62 +57,29 @@ int main()
   freopen("C:\\Users\\my_code\\input.in", "r", stdin);
   freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-
-  int n;
-  cin >> n;
-  int lenthOfArr[n], values[n], locations[n];
-  int firstmin = 200009;
-  memset(locations, -1, sizeof(locations));
-  int lengthOfGift;
-  cin >> lengthOfGift;
-  int gifts[lengthOfGift];
-  for (size_t i = 0; i < lengthOfGift; i++)
+  int n,e;
+  cin>>n>>e;
+  for (size_t i = 0; i < e; i++)
   {
-    cin >> gifts[i];
-    if (gifts[i] <= firstmin)
-    {
-      firstmin = gifts[i];
-      values[0] = gifts[i];
-      locations[0] = i + 1;
-    }
+    int p, q;
+    cin >> p >> q;
+    adj[p].pb(q);
+
   }
 
-  for (int j = 1; j < n; j++)
+  dfs(0);
+  for (size_t i = 0; i <= n; i++)
   {
-    cin >> lengthOfGift;
-    int nextMin = 2000005;
-    int giftss[lengthOfGift];
-    for (int i = 0; i < lengthOfGift; i++)
-    {
-      cin >> giftss[i];
-      if (values[j - 1] <= giftss[i])
-      {
-        if (giftss[i] <= nextMin)
-        {
-          nextMin = giftss[i];
-          values[j] = giftss[i];
-          locations[j] = i+1;
-        }
-      }
-    }
+    cout << i;
+    deb(visited[i])
   }
-  for (size_t i = 0; i < n; i++)
-  {
-    if(locations[i]==-1)
-    {
-      cout << "No" << endl;
-      return 0;
-    }
-  }
-  cout << "Yes" << endl;
-  parray(locations, locations + n);
-
+  
   return 0;
 }
 
 /*
   Documentation:
    
-
+https://www.youtube.com/watch?v=zozEqVy-sKA
 
 */

@@ -38,10 +38,10 @@ int main()
 {
     Sourav;
 
-    // #ifndef ONLINE_JUDGE
-    //     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-    //     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-    // #endif
+    #ifndef ONLINE_JUDGE
+        freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+        freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    #endif
     cout << "Enter the number of products" << endl;
     int n;
     cin >> n;

@@ -5,10 +5,7 @@ vector<int> v[MX];
 vector<int> c(MX);
 int n,x,y,mx,ans;
 void dfs(int n,int p){
-    cout << n << " " << p<<endl;
-    if(v[n].size()==1 && n!=1){
-        cout << "R";
-        return;}
+    if(v[n].size()==1 && n!=1) return;
     for(auto it: v[n]){
         if(it==p) continue;
         dfs(it,n);
@@ -17,12 +14,6 @@ void dfs(int n,int p){
 }
 int main()
 {
-     #ifndef ONLINE_JUDGE
-                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-     #endif
-    
-    
     cin >> n;
     for(int i=0; i<n-1; i++){
         cin >> x >> y;
@@ -31,10 +22,7 @@ int main()
     }
     for(int i=1; i<=n; i++) cin >> c[i];
     dfs(1,0);
-    for(int i=1; i<=n; i++) {
-        c[i] |= c[1];
-        mx = max(mx, c[i]);
-    }
+    for(int i=1; i<=n; i++) c[i]|=c[1],mx=max(mx,c[i]);
     for(int i=1; i<=n; i++) ans=max(ans,mx|c[i]);
     cout << ans;
     return 0;

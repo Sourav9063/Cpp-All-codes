@@ -30,10 +30,36 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
   while (st < nd)
-    cout << *st++ << " ";
-  nl /*sf("%d", st++);*/
+    cout << *st++ << endl; /*sf("%d", st++);*/
 }
 ll tmp, ans;
+void countsort(int arr[], int maxVal, int size)
+{
+
+  int countArr[++maxVal] = {0};
+  for (size_t i = 0; i < size; i++)
+  {
+
+    countArr[arr[i]]++;
+  }
+  for (size_t i = 1; i < maxVal; i++)
+  {
+    countArr[i] += countArr[i - 1];
+
+    // cout << countArr[i] << endl;
+  }
+  int tmpArrFinal[size] = {0};
+  for (int i = size - 1; i >= 0; i--)
+  {
+
+    tmpArrFinal[--countArr[arr[i]]] = arr[i];
+  }
+  for (size_t i = 0; i < size; i++)
+  {
+    arr[i] = tmpArrFinal[i];
+  }
+  
+}
 
 int main()
 {
@@ -46,52 +72,25 @@ int main()
 
   int n;
   cin >> n;
-  int lenthOfArr[n], values[n], locations[n];
-  int firstmin = 200009;
-  memset(locations, -1, sizeof(locations));
-  int lengthOfGift;
-  cin >> lengthOfGift;
-  int gifts[lengthOfGift];
-  for (size_t i = 0; i < lengthOfGift; i++)
-  {
-    cin >> gifts[i];
-    if (gifts[i] <= firstmin)
-    {
-      firstmin = gifts[i];
-      values[0] = gifts[i];
-      locations[0] = i + 1;
-    }
-  }
-
-  for (int j = 1; j < n; j++)
-  {
-    cin >> lengthOfGift;
-    int nextMin = 2000005;
-    int giftss[lengthOfGift];
-    for (int i = 0; i < lengthOfGift; i++)
-    {
-      cin >> giftss[i];
-      if (values[j - 1] <= giftss[i])
-      {
-        if (giftss[i] <= nextMin)
-        {
-          nextMin = giftss[i];
-          values[j] = giftss[i];
-          locations[j] = i+1;
-        }
-      }
-    }
-  }
+  int arr[n];
+  int maxValue = -1;
   for (size_t i = 0; i < n; i++)
   {
-    if(locations[i]==-1)
+    cin >> arr[i];
+    if (arr[i] >= maxValue)
     {
-      cout << "No" << endl;
-      return 0;
+      maxValue = arr[i];
     }
   }
-  cout << "Yes" << endl;
-  parray(locations, locations + n);
+  // deb(maxValue);
+
+  countsort(arr, maxValue, n);
+  // sarray(arr, arr + n);
+  for (size_t i = 0; i < n; i++)
+  {
+    cout << arr[i];nl
+  }
+  
 
   return 0;
 }

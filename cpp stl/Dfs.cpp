@@ -33,27 +33,36 @@ inline void parray(T *st, T *nd)
 }
 lli tmp, ans;
 vector<bool> visited;
-vector < vector<int>> Vec;
- //using stack
+vector<vector<int>> adj;
+//using stack
 void dfsS(int s)
 {
-    stack<int> Stk;
-    Stk.push(s);
+    stack<int> stk;
+    stk.push(s);
     visited[s] = true;
-    while (!Stk.empty())
+    while (!stk.empty())
     {
-        int node = Stk.top();
-        Stk.pop();
-      //  deb(node);
-      ans++;
-         for (int i = 0; i < Vec[node].size(); i++)
+        int node = stk.top();
+        stk.pop();
+         deb(node);
+        ans++;
+        //  for (int i = 0; i < Vec[node].size(); i++)
+        // {
+        //     if (!visited[Vec[node][i]])
+        //     {
+        //         Stk.push(Vec[node][i]);
+        //         visited[Vec[node][i]] = true;
+        //         if(Vec[node][i]==tmp)
+        //         cout<<ans<<endl;
+        //     }
+        // }
+        for (auto i : adj[node])
         {
-            if (!visited[Vec[node][i]])
+            if (!visited[i])
             {
-                Stk.push(Vec[node][i]);
-                visited[Vec[node][i]] = true;
-                if(Vec[node][i]==tmp)
-                cout<<ans<<endl;
+                stk.push(i);
+                visited[i] = true;
+                // cout << i << " ";
             }
         }
     }
@@ -62,36 +71,36 @@ void dfsS(int s)
 int main()
 {
     Sourav;
-     #ifndef ONLINE_JUDGE
-                freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-                freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-     #endif
-  
-   int t;
-   cin>>t;
-      while(t--)
-     
-    
-{ 
-    
-       int nodes,edges,x,y;
-ans=0;
-    cin>>nodes>>edges;tmp=nodes;
-    Vec.resize(nodes+1);
-    visited.resize(nodes+1);
-    for (int i = 0; i < edges; i++)
-    {
-        cin>>x>>y;
-        Vec[x].pb(y);
-        Vec[y].pb(x);
+#ifndef ONLINE_JUDGE
+    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+#endif
 
+    int t;
+    cin >> t;
+    while (t--)
+
+    {
+
+        int nodes, edges, x, y;
+        ans = 0;
+        cin >> nodes >> edges;
+        tmp = nodes;
+        adj.resize(nodes + 1);
+        visited.resize(nodes + 1);
+        for (int i = 0; i < edges; i++)
+        {
+            cin >> x >> y;
+            adj[x].pb(y);
+            adj[y].pb(x);
+        }
+        // for (int i = 0; i < visited.size(); i++)
+        // {
+        //     visited[i]=false;
+        // }
+
+        dfsS(1);
     }
-    // for (int i = 0; i < visited.size(); i++)
-    // {
-    //     visited[i]=false;
-    // }
-    
-dfsS(1);}
 
     return 0;
 }

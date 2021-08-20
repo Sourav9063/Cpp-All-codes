@@ -29,14 +29,16 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-            int a1, a2, a3;
-              srand((unsigned int)time(NULL));
-            a1 = rand() % 6 + 1;
-            a2 = rand() % 6 + 1;
-            a3 = rand() % 6 + 1;
-            cout << a1 << " " << a1+a2 << " " << a1 + a2 + a3 << endl;
+for (int i = 0; i < 100; i++)
+{
+    cout << 0%2 << endl;
+}
 
-            return 0;
+
+
+
+
+  return 0;
 }
 
 /*

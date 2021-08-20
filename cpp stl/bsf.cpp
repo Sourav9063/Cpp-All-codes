@@ -20,7 +20,7 @@ template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
 lli tmp,ans;
 vector<bool>visited;
-vector<vector<int>>Vec;
+vector<vector<int>>adj;
 
 void bfs(int node)
 {
@@ -33,12 +33,12 @@ void bfs(int node)
     node=lst.front();
     lst.pop();
     cout<<node<<" ";
-    for (int i = 0; i < Vec[node].size(); i++)
+    for (int i = 0; i < adj[node].size(); i++)
     {
-      if(!visited[Vec[node][i]])
+      if(!visited[adj[node][i]])
       {
-        lst.push(Vec[node][i]);
-        visited[Vec[node][i]]=true;
+        lst.push(adj[node][i]);
+        visited[adj[node][i]]=true;
       }
     }
     
