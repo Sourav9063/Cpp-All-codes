@@ -38,7 +38,7 @@ inline void parray(T *st, T *nd)
 // Bisection Method. The function is x^3 - x^2  + 2
 double func(double x)
 {
-    return x * x * x + x * x -1;
+    return x * x * x + x * x - 1;
 }
 
 // Prints root of func(x) with error of EPSILON
@@ -54,19 +54,26 @@ void bisection(double a, double b)
     while ((b - a) >= EPSILON)
     {
         deb(a)
-        deb(b)
-        // Find middle point
-        c = (a + b) / 2;
-
+            deb(b)
+            // Find middle point
+            c = (a + b) / 2;
+deb(c)
         // Check if middle point is root
         if (func(c) == 0.0)
             break;
 
         // Decide the side to repeat the steps
         else if (func(c) * func(a) < 0)
+        {
+            cout << "b=c" << endl;
             b = c;
+        }
         else
+        {
+            cout << "a=c" << endl;
             a = c;
+        }
+        nl
     }
     cout << "The value of root is : " << c;
 }
@@ -82,7 +89,7 @@ int main()
 #endif
 
     // Initial values assumed
-    double a = 0, b =1;
+    double a = 0, b = 1;
     bisection(a, b);
     return 0;
 }

@@ -34,7 +34,7 @@ inline void parray(T *st, T *nd)
 }
 ll tmp, ans;
 
-#define MAX_ITER 1000000
+#define MAX_ITER 100
 
 // An example function whose solution is determined using
 // Bisection Method. The function is x^3 - x^2  + 2
@@ -56,18 +56,28 @@ void regulaFalsi(double a, double b)
 
     for (int i = 0; i < MAX_ITER; i++)
     {
-        // Find the point that touches x axis
-        c = (a * func(b) - b * func(a)) / (func(b) - func(a));
+        deb(a)
+            deb(b)
 
-        // Check if the above found point is root
-        if (func(c) == 0)
-            break;
-   
+            // Find the point that touches x axis
+            c = (a * func(b) - b * func(a)) / (func(b) - func(a));
+        deb(c)
+            // Check if the above found point is root
+            if (func(c) == 0) break;
+
         // Decide the side to repeat the steps
         else if (func(c) * func(a) < 0)
+        {
+            cout << "b=c" << endl;
             b = c;
+        }
         else
+        {
+            
+            cout << "a=c" << endl;
             a = c;
+        }
+        nl
     }
     cout << "The value of root is : " << c;
 }
@@ -77,7 +87,7 @@ int main()
 {
     Sourav;
 
-#ifndef ONLINE_JUDGE 
+#ifndef ONLINE_JUDGE
     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif

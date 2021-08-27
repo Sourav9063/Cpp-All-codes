@@ -17,37 +17,41 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define rSort(x) sort((x).rbegin(), (x).rend())
 
-#define Sourav                      \
-  ios_base::sync_with_stdio(false); \
-  cin.tie(NULL);                    \
-  cout.tie(NULL);
+#define Sourav                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>
 inline void sarray(T *st, T *nd)
 {
-  while (st < nd)
-    cin >> *st++; /*sf("%d", st++);*/
+    while (st < nd)
+        cin >> *st++; /*sf("%d", st++);*/
 }
 template <class T>
 inline void parray(T *st, T *nd)
 {
-  while (st < nd)
-    cout << *st++ << endl; /*sf("%d", st++);*/
+    while (st < nd)
+        cout << *st++ << endl; /*sf("%d", st++);*/
 }
-ll tmp, ans;
+int ans = 100;
+void changeAns()
+{
+    ans = 30;
+}
 
 int main()
 {
-  Sourav;
+    Sourav;
 
 #ifndef ONLINE_JUDGE
-  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-
-
-  return 0;
+    deb(ans)
+        changeAns();
+    deb(ans) return 0;
 }
 
 /*
