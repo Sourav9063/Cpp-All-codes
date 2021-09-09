@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Three Pairwise Maximums
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,10 +46,19 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t ;
+
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        ll a[3];
+        cin >> a[0] >> a[1] >> a[2];
+        sort(a, a + 3);
+        if (a[2] != a[1])
+            cout << "No" << endl;
+        else
+            cout << "Yes\n"
+                 << a[2] << " " << a[0] << " " << 1 << endl;
     }
 
     return 0;

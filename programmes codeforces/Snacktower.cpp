@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Snacktower
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,10 +46,28 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    int n, x;
+    cin >> n;
+    int cur = n;
+    int a[n + 5] = {0};
+    for (int i = 0; i < n; i++)
     {
-        deb(i)
+        cin >> x;
+        a[x] = 1;
+        if (x == cur)
+        {
+            for (int i = cur; i > 0; i--)
+            {
+                if (a[i])
+                {
+                    cout << i << " ";
+                    a[i] = 0, cur = i - 1;
+                }
+                else
+                    break;
+            }
+        }
+        nl
     }
 
     return 0;

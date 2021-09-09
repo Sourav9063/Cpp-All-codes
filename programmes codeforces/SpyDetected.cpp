@@ -33,8 +33,7 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
     while (st < nd)
-        cout << *st++ << ' ';
-    nl /*sf("%d", st++);*/
+        cout << *st++ << endl; /*sf("%d", st++);*/
 }
 
 int main()
@@ -46,10 +45,29 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        int n;
+        cin >> n;
+        int arr[n];
+        sarray(arr, arr + n);
+        for (int i = 1; i < n; i++)
+        {
+            if (arr[i - 1] != arr[i])
+            {
+                if (arr[i] == arr[i + 1])
+                {
+                    cout << i << endl;
+                }
+                else
+                {
+                    cout << i + 1 << endl;
+                }
+                break;
+            }
+        }
     }
 
     return 0;

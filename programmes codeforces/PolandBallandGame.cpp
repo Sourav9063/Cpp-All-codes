@@ -46,12 +46,35 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    int n, m;
+    cin >> n >> m;
+    map<string, int> s;
+    for (size_t i = 0; i < n + m; i++)
     {
-        deb(i)
+        string stmp;
+        cin >> stmp;
+        s[stmp]++;
     }
-
+    int dupcount = 0;
+    for (auto s1 : s)
+    {
+        if (s1.second > 1)
+        {
+            dupcount+=s1.second/2;
+        }
+    }
+ int   nu = n - dupcount;
+ int mu = m - dupcount;
+//  deb(nu)
+//  deb(mu)
+ if (nu > mu)
+     cout << "YES" << endl;
+ else if (mu > nu)
+     cout << "NO" << endl;
+ else
+ {
+     cout << ((nu + mu+dupcount )% 2 ? "YES" : "NO") << endl;
+    }
     return 0;
 }
 

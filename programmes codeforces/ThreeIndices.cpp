@@ -46,10 +46,46 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        int n;
+        cin >> n;
+        bool up = false, down = false;
+        int a[n];
+        int p[6]={0};
+        cin >> a[0];
+        for (int i = 1; i < n; i++)
+        {
+            cin >> a[i];
+            if (a[i - 1] < a[i]&&!up)
+            {
+                up = true;
+                p[0] = a[i - 1];
+                p[1] = i;
+            }
+            if(!down&&a[i-1]>a[i]&&up){
+                down = true;
+                p[2] = a[i - 1];
+                p[3] = i;
+                p[4] = a[i];
+                p[5] = i+1;
+            }
+            
+        }
+
+        // parray(p, p + 6);
+
+        if(p[1]!=0&&p[3]!=0&&p[5]!=0){
+            cout << "YES" << endl;
+            cout << p[1] << " ";
+            cout << p[3] << " ";
+            cout << p[5] << " ";
+            nl
+        }
+        else
+            cout << "NO" << endl;
     }
 
     return 0;

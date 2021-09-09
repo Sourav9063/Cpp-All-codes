@@ -46,12 +46,54 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    int n;
+    cin >> n;
+    vector<int> a;
+    for (size_t i = 0; i < n; i++)
     {
-        deb(i)
+        int tmp;
+        cin >> tmp;
+        a.emplace_back(tmp);
     }
+    int ans = 0;
+    sort(a.begin(), a.end());
+    // for (size_t i = 0; i < n; i++)
+    // {
+    //     cout << a[i] << " ";
+    // }
+    // nl
+    
+    //  for (size_t i = 1; i <= n; i++)
+    // {
+    //     // deb(a[0])
+    //     // for (auto j:a)
+    //     // {
 
+    //     //     cout <<j<< " ";
+    //     // }
+    //     //     deb(i)
+    //     while (a[0] < i || a.empty())
+    //         a.pop_front();
+    //     a.pop_front();
+    //     ans++;
+    //     if (a.empty())
+    //         break;
+    // }
+    for (int i = 1,j=0; i <= n&&j<n;)
+    {
+        if(a[j]>=i){
+            ans++;
+            i++;
+            j++;
+        }
+        else{
+            j++;
+        }
+        
+    }
+    
+
+    cout << ans << endl;
     return 0;
 }
 

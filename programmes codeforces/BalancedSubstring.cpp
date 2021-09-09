@@ -46,10 +46,44 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        int n;
+        cin >> n;
+        int a, b;
+        a = b = 0;
+        char s[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> s[i];
+            if (s[i] == 'a')
+                a++;
+            else
+                b++;
+        }
+        if (a == 0 || b == 0)
+        {
+            cout << -1 << " " << -1 << endl;
+        }
+        else{
+            if(a==b){
+                cout << 1 << " " << n << endl;
+            }
+            else{
+
+                for (size_t i = 1; i < n; i++)
+                {
+                    if(s[i-1]!=s[i]){
+                        cout << i << " " << i + 1 << endl;
+                        break;
+                    }
+                    
+                }
+                
+            }
+        }
     }
 
     return 0;

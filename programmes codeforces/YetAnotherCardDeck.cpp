@@ -37,6 +37,12 @@ inline void parray(T *st, T *nd)
     nl /*sf("%d", st++);*/
 }
 
+struct Card
+{
+    int pos;
+    int color;
+};
+
 int main()
 {
     Sourav;
@@ -45,14 +51,27 @@ int main()
     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-
-    vector<int> n(1000000, -1);
-    for (auto i : n)
-    {
-        deb(i)
-    }
-
-    return 0;
+   
+    int n,q;
+int a[55]={0};
+cin >> n >> q;
+	for(int i=1 ; i<=n ; i++)
+	{
+		int x;
+		cin>>x;
+		if(!a[x]) a[x]=i;
+	}
+	while(q--)
+	{
+		int p;
+		cin>>p;
+		cout<<a[p]<<" ";
+		for(int i = 1 ; i<=50 ;i++)
+			if(a[i]<a[p])
+				a[i]++;
+		a[p]=1;
+	}
+        return 0;
 }
 
 /*

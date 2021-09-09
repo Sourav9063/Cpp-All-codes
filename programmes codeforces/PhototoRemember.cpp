@@ -36,7 +36,11 @@ inline void parray(T *st, T *nd)
         cout << *st++ << ' ';
     nl /*sf("%d", st++);*/
 }
-
+struct WxH
+{
+    int width;
+    int height;
+};
 int main()
 {
     Sourav;
@@ -46,10 +50,42 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll n;
+    cin >> n;
+    ll widthTotal = 0;
+    vector<WxH> list(n);
+    // vector<int> heights;
+    int mxheight = -1, mxheight2nd = -1;
+    for (size_t i = 0; i < n; i++)
     {
-        deb(i)
+        cin >> list[i].width;
+        cin >> list[i].height;
+        widthTotal += list[i].width;
+        if (mxheight < list[i].height)
+        {
+            mxheight2nd = mxheight;
+            mxheight = list[i].height;
+        }
+        else {
+            if( list[i].height>mxheight2nd){
+                mxheight2nd = list[i].height;
+            }
+
+        }
+
+        // heights.pb(list[i].height);
+    }
+    // rSort(heights);
+
+    for (size_t i = 0; i < n; i++)
+    {
+        if (list[i].height == mxheight)
+        {
+            cout << (widthTotal - list[i].width) * mxheight2nd << " ";
+        }
+        else{
+            cout << (widthTotal - list[i].width) * mxheight << " ";
+        }
     }
 
     return 0;

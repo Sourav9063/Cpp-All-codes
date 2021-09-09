@@ -46,12 +46,35 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll n, t, c;
+    cin >> n >> t >> c;
+    vector<ll> segments;
+    ll left = 0,
+       right = 0;
+    for (size_t i = 0; i < n; i++)
     {
-        deb(i)
+        ll tmp;
+        cin >> tmp;
+        if (tmp > t)
+        {
+            segments.pb(right - left);
+            left = i + 1;
+            right = i + 1;
+        }
+        else
+        {
+            right++;
+        }
     }
-
+    segments.pb(right - left);
+    ll ans = 0;
+    for (auto i : segments)
+    {
+        // deb(i)
+         if (i >= c)
+            ans += (i - c + 1);
+    }
+    cout << ans << endl;
     return 0;
 }
 

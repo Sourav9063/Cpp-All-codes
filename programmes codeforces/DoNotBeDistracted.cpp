@@ -33,8 +33,7 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
     while (st < nd)
-        cout << *st++ << ' ';
-    nl /*sf("%d", st++);*/
+        cout << *st++ << endl; /*sf("%d", st++);*/
 }
 
 int main()
@@ -46,10 +45,34 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        string ans = "YES";
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        int f[26] = {0};
+        for (size_t i = 0; i < n; i++)
+        {
+            f[s[i] - 'A']++;
+        }
+        f[s[0] - 'A']--;
+        for (int i = 1; i < n; i++)
+        {
+            if ((s[i] != s[i - 1]) && f[s[i - 1] - 'A'] > 0)
+            {
+                ans = "NO";
+            }
+            else
+            {
+                f[s[i] - 'A']--;
+                ;
+            }
+        }
+        cout << ans << endl;
     }
 
     return 0;

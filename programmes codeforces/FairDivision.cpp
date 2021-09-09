@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Fair Division
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -33,8 +33,7 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
     while (st < nd)
-        cout << *st++ << ' ';
-    nl /*sf("%d", st++);*/
+        cout << *st++ << endl; /*sf("%d", st++);*/
 }
 
 int main()
@@ -46,10 +45,33 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    vector<int> n(1000000, -1);
-    for (auto i : n)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        deb(i)
+        int n;
+        cin >> n;
+        int n1, n2;
+        n1 = n2 = 0;
+        for (size_t i = 0; i < n; i++)
+        {
+            int tmp;
+            cin >> tmp;
+            if (tmp == 1)
+                n1++;
+            else
+                n2++;
+        }
+
+        if(n1%2){
+            cout << "NO" << endl;
+        }
+        else if(n1==0&&n2%2){
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+        }
     }
 
     return 0;
