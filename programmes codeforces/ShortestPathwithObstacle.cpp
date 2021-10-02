@@ -46,19 +46,27 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int a1, a2, b1, b2, f1, f2;
+        cin >> a1 >> a2 >> b1 >> b2 >> f1 >> f2;
+        int ans = 0;
+        if ((a1 == b1 && f1 == b1))
+        {
+            if (min(a2, b2) <= f2 && max(a2, b2) >= f2)
+                ans += 2;
+        }
+
+        else if ((a2 == b2 && f2 == b2))
+        {
+            if (min(a1, b1) <= f1 && max(a1, b1) >= f1)
+                ans += 2;
+        }
+        cout << abs(a1 - b1) + abs(a2 - b2) + ans << endl;
     }
-  
+
     return 0;
 }
 

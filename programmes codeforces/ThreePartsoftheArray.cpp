@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Three Parts of the Array
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,19 +46,45 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ull n;
+    cin >> n;
+    ull ar[n], ur[n], sar[n], sur[n];
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> ar[i];
+        ur[n - 1 - i] = ar[i];
     }
-  
+    sar[0] = ar[0];
+    sur[0] = ur[0];
+    for (size_t i = 1; i < n; i++)
+    {
+
+        sar[i] = ar[i] + sar[i - 1];
+        sur[i] = ur[i] + sur[i - 1];
+    }
+    // parray(sar, sar + n);
+    // parray(sur, sur + n);
+    // ll ans = 0;
+    for (ll i = n - 1; i >= 0; i--)
+    {
+        for (ll j = n - i - 1; j >= 0;)
+        {
+            
+            if (binary_search(sur, sur + j, sar[i]))
+            {
+                cout << sar[i] << endl;
+                return 0;
+            }
+            else  
+            {
+                // pt
+                break;
+            }
+        }
+    }
+
+    cout << 0 << endl;
+
     return 0;
 }
 

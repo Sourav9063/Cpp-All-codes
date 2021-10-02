@@ -33,65 +33,74 @@ template <class T>
 inline void parray(T *st, T *nd)
 {
   while (st < nd)
-    cout << *st++ << endl; /*sf("%d", st++);*/
+    cout << *st++ << ' ';
+  nl /*sf("%d", st++);*/
 }
-int computeXOR(int n)
-{
 
-  // If n is a multiple of 4
-  if (n % 4 == 0)
-    return n;
-
-  // If n%4 gives remainder 1
-  if (n % 4 == 1)
-    return 1;
-
-  // If n%4 gives remainder 2
-  if (n % 4 == 2)
-    return n + 1;
-
-  // If n%4 gives remainder 3
-  return 0;
-}
-int main()
+main()
 {
   Sourav;
-
 #ifndef ONLINE_JUDGE
   freopen("C:\\Users\\my_code\\input.in", "r", stdin);
   freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-  ll t;
+  int t;
   cin >> t;
   while (t--)
   {
-    int a, b;
-  
-    cin >> a >> b;
-    int beforXOR = computeXOR(a - 1);
-
-    if (beforXOR == b)
+    while (t--)
     {
-      cout << a << endl;
-    }
-
-    else
-    {
-      if (computeXOR(a) == b)
+      ll n;
+      cin >> n;
+      vector<ll> v(n);
+      priority_queue<pair<ll, ll>> pq;
+      for (ll i = 0; i < n; i++)
       {
-        cout << a + 2 << endl;
+        cin >> v[i];
+        if (v[i])
+        {
+          pq.push({v[i], i});
+        }
       }
-      else
+      vector<vector<ll>> ans(n,{-1,-1});
+      while (pq.size() > 1)
       {
-        cout << a + 1 << endl;
+        ll num1 = pq.top().first;
+        ll ind1 = pq.top().second + 1;
+        pq.pop();
+        ll num2 = pq.top().first;
+        ll ind2 = pq.top().second + 1;
+        pq.pop();
+        num1--;
+        num2--;
+        ans.push_back({ind1, ind2});
+        if (num1 > 0)
+        {
+          pq.push({num1, ind1 - 1});
+        }
+        if (num2 > 0)
+        {
+          pq.push({num2, ind2 - 1});
+        }
+      }
+      cout << ans.size() << '\n';
+      for (auto itr : ans)
+      {
+        for (auto it : itr)
+        {
+          if(it==-1)
+            break;
+          cout << it << " ";
+          
+        }
+        cout << "\n";
+        
       }
     }
   }
-
   return 0;
 }
-
 /*
   Documentation:
    

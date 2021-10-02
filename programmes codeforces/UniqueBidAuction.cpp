@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Unique Bid Auction
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,19 +46,41 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        map<int, int> mpLoc;
+        map<int, int> mpNum;
+        sarray(a, a + n);
+        for (size_t i = 0; i < n; i++)
+        {
+
+            mpNum[a[i]]++;
+            mpLoc[a[i]] = i + 1;
+            // deb(mp[a[i]]);
+        }
+
+        sort(a, a + n);
+        bool no = false;
+        for (auto i : mpNum)
+        {
+            if (i.second == 1)
+            {
+                cout << mpLoc[i.first] << endl;
+                no = true;
+                break;
+            }
+        }
+        if(!no){
+            cout << -1 << endl;
+        }
+    
     }
-  
+
     return 0;
 }
 

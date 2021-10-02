@@ -36,7 +36,11 @@ inline void parray(T *st, T *nd)
         cout << *st++ << ' ';
     nl /*sf("%d", st++);*/
 }
-
+ll findOpposite(ll mx, ll mn, ll c, ll num)
+{
+    ll ans = (c + (mx - mn)) % num;
+    return ans == 0 ? num : ans;
+}
 int main()
 {
     Sourav;
@@ -46,19 +50,22 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll a, b, c;
+        cin >> a >> b >> c;
+        ll mx = max(a, b), mn = min(a, b);
+        ll num = (mx - mn - 1) * 2 + 2;
+        // deb(num);
+        // if(mx+(mx-mn))
+        if(mx!=findOpposite(mx,mn,mn,num)||num<4||c>num)
+            cout << -1 << endl;
+        else
+            cout << findOpposite(mx, mn, c, num)<<endl;
     }
-  
+
     return 0;
 }
 

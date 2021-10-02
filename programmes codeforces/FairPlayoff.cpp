@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Fair Playoff
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,19 +46,21 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll s[4];
+        sarray(s, s + 4);
+        if (min(s[0],s[1])>max(s[2],s[3])||min(s[2],s[3])>max(s[1],s[0]))
+        {
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+        }
     }
-  
+
     return 0;
 }
 

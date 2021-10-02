@@ -17,49 +17,49 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define rSort(x) sort((x).rbegin(), (x).rend())
 
-#define Sourav                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);                    \
-    cout.tie(NULL);
+#define Sourav                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(NULL);                    \
+  cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>
 inline void sarray(T *st, T *nd)
 {
-    while (st < nd)
-        cin >> *st++; /*sf("%d", st++);*/
+  while (st < nd)
+    cin >> *st++; /*sf("%d", st++);*/
 }
 template <class T>
 inline void parray(T *st, T *nd)
 {
-    while (st < nd)
-        cout << *st++ << ' ';
-    nl /*sf("%d", st++);*/
+  while (st < nd)
+    cout << *st++ << ' ';
+  nl /*sf("%d", st++);*/
 }
 
 int main()
 {
-    Sourav;
+  Sourav;
 
 #ifndef ONLINE_JUDGE
-    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
-    }
-  
-    return 0;
+  ll t;
+  cin >> t;
+  while (t--)
+  {
+    ll r, b, d;
+    cin >> r >> b >> d;
+    ll mx, mn;
+    mx = max(r, b);
+    mn = min(r, b);
+    cout << ((mx > mn * (d + 1)) ? "NO" : "YES");
+    nl;
+  }
+
+  return 0;
 }
 
 /*

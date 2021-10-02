@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: Juggling Letters
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,19 +46,40 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        vector<string> v(n);
+        for (size_t i = 0; i < n; i++)
+        {
+            cin >> v[i];    
+        }
+        
+        map<char, int> m;
+     for (size_t i = 0; i < n; i++)
+     {
+         for (size_t j = 0; j < v[i].size(); j++)
+         {
+             m[v[i][j]]++;
+         }
+         
+     }
+     
+        bool f = true;
+        for (auto i:m)
+        {
+            // deb(i.first);
+            if(i.second%n!=0){
+                f = false;
+                break;
+            }
+        }
+        cout << (f ? "YES" : "NO") << endl;
     }
-  
+
     return 0;
 }
 

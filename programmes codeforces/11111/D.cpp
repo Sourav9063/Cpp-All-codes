@@ -46,19 +46,49 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        priority_queue<pair<ll, ll>> pqp;
+        for (size_t i = 1; i <= n; i++)
+        {
+            int tmp;
+            cin >> tmp;
+            
+        if(tmp>0)    pqp.push({tmp, i});
+        }
+        vector<pair<ll, ll>> ans;
+        while (pqp.size() > 1)
+        {
+            pair<ll, ll> p1 = pqp.top();
+    pqp.pop();
+    pair<ll, ll>p2 = pqp.top();
+            pqp.pop();
+            ans.push_back(make_pair(p1.second, p2.second));
+            p1.first--;
+            p2.first--;
+            if (p1.first )
+                pqp.push(p1);
+            if (p2.first != 0)
+                pqp.push(p2);
+        }
+        cout<<ans.size()<<endl;
+        for (auto i:ans)
+        {
+          cout<<i.first<<" "<<i.second<<endl;
+        }
+        // for (size_t i = 0; i < n; i++)
+        // {
+        //     cout << pqp.top().first << " " << pqp.top().second << endl;
+        //     pqp.pop();
+        // }
+
+        // nl
     }
-  
+
     return 0;
 }
 

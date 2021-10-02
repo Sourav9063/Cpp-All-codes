@@ -46,19 +46,62 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll n, k;
+    string s;
+    cin >> n >> k;
+    cin >> s;
+    ll q;
+    cin >> q;
+    priority_queue<ll> pq;
+    map<ll, pair<ll,pair<ll,ll>>> mp;
+    pq.push(n);
+    for (ll i = 1; i <=k; i++)
+    {
+        ll tmp = pq.top();
+        pq.pop();
+        if (tmp % 2 == 0)
+        {
+            if (s[i-1] == 'R')
+            {
+              int tmp2 = mp[tmp / 2+1].first;
+              if(tmp2 ==0){
+                //    mp[tmp / 2+1]={i,{}}
+                // ToDo::
+              }
+
+                pq.push(tmp/2);
+                pq.push(tmp/2-1);
+            }
+            else
+            {
+                
+                mp[tmp / 2]=i;
+                pq.push(tmp/2);
+                pq.push(tmp/2-1);
+            }
+        }
+        else{
+            
+            mp[tmp / 2+1] = i;
+            // deb(tmp/2)
+            pq.push(tmp/2);
+            pq.push(tmp/2);
+        }
+
+
     }
-  
+
+for (ll i = 0; i < q; i++)
+{
+
+    ll tmp;
+    cin >> tmp;
+    ll tmpans = mp[tmp];
+    cout << (tmpans==0 ? -1:mp[tmp])<< endl;
+}
+
+
+
     return 0;
 }
 

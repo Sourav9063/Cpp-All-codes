@@ -46,19 +46,67 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        ll a[n + 2];
+        ll mx = INT64_MIN;
+        for (size_t i = 0; i < n + 2; i++)
+        {
+            cin >> a[i];
+            mx = max(mx, a[i]);
+        }
+        ll cumsum = 0;
+        bool fm = false;
+        for (size_t i = 0; i < n + 2; i++)
+        {
+
+         
+            if (a[i] == mx &&!fm)
+            {
+                a[i] = 0;
+                fm = true;
+                // deb(i)
+            }
+            cumsum += a[i];
+        }
+      
   
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+        ll ex = cumsum - mx;
+        bool flag = false;
+        // bool flagmx = false;
+        vector<ll> v;
+        for (size_t i = 0; i < n + 2; i++)
+        {
+            if (a[i] == ex && !flag)
+            {
+                flag = true;
+                a[i] = 0;
+            }
+            //  if(a[i]==mx&&!flagmx){
+            //     flagmx = true;
+            // }
+            if (a[i] != 0)
+                v.push_back(a[i]);
+        }
+
+        if (!flag||v.size()!=n)
+        {
+            cout << -1;
+        }
+        else
+        {
+            for (auto &i : v)
+            {
+                cout << i << " ";
+            }
+        }
+        nl
     }
-  
+
     return 0;
 }
 

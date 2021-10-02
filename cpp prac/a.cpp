@@ -1,42 +1,55 @@
-//                      Name: 
-#include<bits/stdc++.h>
+//                      Name:
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+#include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long int //lld
+#define ll long long int           //lld
 #define ull unsigned long long int //llu
 
-#define pt cout<<"*"<<"\n";
-#define nl cout<<"\n";
+#define pt cout << "*" \
+                << "\n";
+#define nl cout << "\n";
 #define deb(x) cout << #x << "=" << x << "\n";
 
-#define pb(a)    emplace_back(a)
-#define all(x)   (x).begin(),(x).end()
-#define rSort(x) sort((x).rbegin(),(x).rend())
+#define pb(a) emplace_back(a)
+#define all(x) (x).begin(), (x).end()
+#define rSort(x) sort((x).rbegin(), (x).rend())
 
-#define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define Sourav                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(NULL);                    \
+  cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<endl;/*sf("%d", st++);*/}
-ll tmp,ans;
+template <class T>
+inline void sarray(T *st, T *nd)
+{
+  while (st < nd)
+    cin >> *st++; /*sf("%d", st++);*/
+}
+template <class T>
+inline void parray(T *st, T *nd)
+{
+  while (st < nd)
+    cout << *st++ << ' ';
+  nl /*sf("%d", st++);*/
+}
 
 int main()
 {
-Sourav;
+  Sourav;
 
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
+#ifndef ONLINE_JUDGE
+  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+#endif
 
-for (int i = 0; i < 100; i++)
-{
-    cout << 0%2 << endl;
-}
-
-
-
-
+  for (size_t i = 0; i < 1000; i++)
+  {
+    cout << i << endl;
+  }
 
   return 0;
 }

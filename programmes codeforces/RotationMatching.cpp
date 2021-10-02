@@ -46,19 +46,38 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    int n;
+    cin >> n;
+    int ap[n + 1], a[n + 1];
+    int bp[n + 1], b[n + 1];
+    for (size_t i = 1; i <= n; i++)
+    {
+        int tmp;
+        cin >> tmp;
+        a[i] = tmp;
+
+        ap[tmp] = i;
     }
-  
+    for (size_t i = 1; i <= n; i++)
+    {
+        int tmp;
+        cin >> tmp;
+        b[i] = tmp;
+        bp[tmp] = i;
+    }
+    vector<int> ans(n,0);
+
+    for (size_t i = 1; i <=n; i++)
+    {
+        ll tmp = ap[a[i]] - bp[a[i]];
+        // cout << abs(ap[a[i]] - bp[a[i]]);
+         if (tmp <0) tmp+=n;
+         ans[tmp]++;
+    }
+    rSort(ans);
+
+    cout<<ans[0];
+    nl
     return 0;
 }
 

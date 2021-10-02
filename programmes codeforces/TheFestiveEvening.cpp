@@ -1,4 +1,4 @@
-//                      Name:
+//                      Name: The Festive Evening
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -46,19 +46,58 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-   vector<int> v = { 1, 3, 1, 10, 3, 3, 7, 7, 8 }, i;
-  
-    vector<int>::iterator ip;
-  
-    // Using std::partial_sort
-    partial_sort(v.begin(), v.begin() + 5, v.end());
-  
-    // Displaying the vector after applying
-    // std::partial_sort
-    for (ip = v.begin(); ip != v.end(); ++ip) {
-        cout << *ip << " ";
+    ll n, k;
+    cin >> n >> k;
+    vector<ll> count(26, 0);
+    map<char, int> mp;
+    // memset(mp,-1,sizeof(mp))
+    char ch[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> ch[i];
+        count[ch[i] - 'A']++;
+        mp[ch[i]] = i;
     }
-  
+    // for(auto i:mp){
+    //     deb(i.first)
+    //     deb(i.second)
+    // }
+    ll open = 0;
+    vector<int> as(26, 0);
+
+    for (int i = 0; i < n; i++)
+    {
+        // deb(as[ch[i] - 'A']);
+        if (as[ch[i] - 'A'] == 0)
+        {
+            // deb(ch[i])
+                open++;
+            // count[ch[i] - 'A']--;
+            as[ch[i] - 'A'] = 1;
+        }
+        if (open > k)
+        {
+            cout << "YES" << endl;
+            return 0;
+        }
+        if (i == mp[ch[i]])
+        {
+
+            open--;
+            as[ch[i] - 'A'] = 0;
+        }
+        // deb(open);
+
+    }
+    cout << "NO" << endl;
+
+    // for (size_t i = 1; i < n; i++)
+    // {
+    //     if(ch[i-1]!=ch[i])
+    //         open++;
+
+    // }
+
     return 0;
 }
 
