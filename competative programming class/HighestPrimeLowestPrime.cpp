@@ -17,52 +17,70 @@ using namespace std;
 #define rSort(x) sort((x).rbegin(),(x).rend())
 
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define MOD 1000000007
+
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
-ll binpow(ll a, ll b)
+
+
+vector<ull>vPrime;
+bitset<10000000>isPrime;
+
+void seive()
 {
-  ll res = 1;
-  a %= MOD;
-  while (b > 0)
-  {
-    if (b & 1)
-      res = res * a % MOD;
-    a = a * a % MOD;
-    b >>= 1;
-  }
-  return res;
+    ull n = 100000;
+    //suf(n);
+    isPrime.flip();
+    isPrime[1] = 0;
+    vPrime.pb(2);
+    for (ull p = 2; p * p <= n; p++)
+    {
+        if (isPrime[p])
+        {
+            for (ull i = p * p; i <= n; i += p)
+            {
+                isPrime[i] = 0;
+            }
+        }
+    }
+    for (ull p = 1; p <= n; p += 2)
+    {
+        if (isPrime[p])
+        {
+            vPrime.pb(p);
+            //cout<<p<<endl;
+        }
+    }
 }
+
 int main()
 {
-  Sourav;
+    Sourav;
 
 #ifndef ONLINE_JUDGE
-  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-  ll n;
-  cin >> n;
-  ll pp = 1;
-  for (size_t i = 1; i <= n; i++)
-  {
-    pp *= 2;
-  }
-  pp -= 2;
-  ll ans = binpow(4, pp);
-  ans *= 6;
-  ans %= MOD;
-  if (ans < 0)
-    ans += MOD;
-  cout << ans << endl;
-  return 0;
+
+    seive();
+
+    for (size_t i = 0; i < 1000; i++)
+    {
+        ll tmp;
+        cin >> tmp;
+        if (isPrime[tmp]) {
+            deb(tmp);
+        }
+        else {
+            cout << "*****************************************" << endl;
+        }
+    }
+    
 
 
 
 
-
-  return 0;
+    return 0;
 }
 
 /*

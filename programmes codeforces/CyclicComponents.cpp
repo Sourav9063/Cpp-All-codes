@@ -17,52 +17,59 @@ using namespace std;
 #define rSort(x) sort((x).rbegin(),(x).rend())
 
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define MOD 1000000007
+
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
-ll binpow(ll a, ll b)
-{
-  ll res = 1;
-  a %= MOD;
-  while (b > 0)
-  {
-    if (b & 1)
-      res = res * a % MOD;
-    a = a * a % MOD;
-    b >>= 1;
-  }
-  return res;
+
+vector<int>graph[200010];
+bool isVisited[200010];
+bool verticesDegree2;
+void dfs(int v) {
+
+    isVisited[v] = true;
+    if (graph[v].size() != 2)verticesDegree2 = false;
+    for (auto child : graph[v]) {
+        if (!isVisited[child])dfs(child);
+    }
+
 }
+
 int main()
 {
-  Sourav;
+    Sourav
 
 #ifndef ONLINE_JUDGE
-  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-  ll n;
-  cin >> n;
-  ll pp = 1;
-  for (size_t i = 1; i <= n; i++)
-  {
-    pp *= 2;
-  }
-  pp -= 2;
-  ll ans = binpow(4, pp);
-  ans *= 6;
-  ans %= MOD;
-  if (ans < 0)
-    ans += MOD;
-  cout << ans << endl;
-  return 0;
+
+    int v, e;
+    cin >> v >> e;
+    for (size_t i = 0; i < e; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+        graph[u].pb(v);
+        graph[v].pb(u);
+
+    }
+
+    int ans = 0;
+    for (int i = 1; i < v; i++)
+    {
+        if (!isVisited[i]) {
+            verticesDegree2 = true;
+            dfs(i);
+            if (verticesDegree2)ans++;
+        }
+    }
+    
+    cout << ans << endl;
 
 
 
-
-
-  return 0;
+    return 0;
 }
 
 /*
