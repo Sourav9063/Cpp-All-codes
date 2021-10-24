@@ -51,7 +51,7 @@ int main()
 #endif
 
     cin >> n >> m;
-   for(int i=1;i<=n;++i) visited[i] =1;
+    for (int i = 1;i <= n;++i) visited[i] = 1;
     for (int i = 0; i < m; i++)
     {
         int u, v;
