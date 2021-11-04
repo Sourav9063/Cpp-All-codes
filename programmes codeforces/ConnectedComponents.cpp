@@ -40,6 +40,41 @@ void dfs(int par) {
 
 
 }
+//create a function to find power of two number
+int power(int x, int y)
+{
+    int res = 1;
+    while (y > 0)
+    {
+        if (y & 1)
+            res = res * x;
+        y = y >> 1;
+        x = x * x;
+    }
+    return res;
+}
+//create a function to find the number of set bits in a number
+int countSetBits(int n)
+{
+    int count = 0;
+    while (n)
+    {
+        count++;
+        n = n & (n - 1);
+    }
+    return count;
+}
+//create a function to find the number of last 0 
+int lastZero(int n)
+{
+    int count = 0;
+    while (n)
+    {
+        count++;
+        n = n & (n - 1);
+    }
+    return count;
+}
 
 int main()
 {
@@ -50,38 +85,8 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-    cin >> n >> m;
-    for (int i = 1;i <= n;++i) visited[i] = 1;
-    for (int i = 0; i < m; i++)
-    {
-        int u, v;
-        cin >> u >> v;
-        mpGraph[u][v] = mpGraph[v][u] = true;
-
-    }
-
-    for (int i = 1; i <= n; i++)
-    {
-      
-        if (visited[i]) {
-            ct = 0;
-            dfs(i);
-            if (ct != 0) ctV.pb(ct);
-        }
-
-
-    }
-
-
-    cout << ctV.size(); nl;
-    sort(all(ctV));
-    for (auto i : ctV) {
-        cout << i << " ";
-    }
-    nl
-    cout<<"YOO";
-
-
+    cin >> n ;
+    cout<<lastZero(n)<<endl;
 
         return 0;
 }

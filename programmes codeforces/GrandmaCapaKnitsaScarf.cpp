@@ -22,9 +22,6 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<' ';nl/*sf("%d", st++);*/}
 
-unordered_map<char, ll> mp;
-string s, keyboard;
-ll ans = 0;
 int main()
 {
 Sourav;
@@ -39,19 +36,37 @@ Sourav;
  cin>>t;
     while(t--)
     {
-      cin >> keyboard;
-      cin >> s;
-      
-      for (ll i = 0; i < keyboard.size(); i++)
-      { 
-        mp[keyboard[i]] = i;
-      }
-      ans = 0;
-      for (ll i = 1; i < s.size(); i++)
-      {
-        ans += abs(mp[s[i]] - mp[s[i - 1]]);
-      }
-      cout << ans;nl
+        ll n;
+        cin >> n;
+        string s;
+        cin >> s;
+        unordered_map<char, int>mp;
+        for (size_t i = 0; i < s.size(); i++)
+        {
+            mp[s[i]]++;
+        }
+        // string s; cin>>n>>s;
+		ll ans=INT64_MAX;
+		for(auto i:mp)
+        {
+            ll cnt = 0, l = 0, r = n - 1;
+			while(1)
+			{
+                // deb(i.first)
+                //     deb(s)
+                    if (s[l] == s[r]) l++, r--;
+				else if(s[l]==i.first)	cnt++, l++;
+				else if(s[r]==i.first)	cnt++, r--;
+				else{
+					cnt=INT64_MAX;
+					break;
+				}	
+				if(l>r)	break;
+			}
+			ans=min(ans,cnt);
+		}
+		if(ans==INT64_MAX)	ans=-1;
+		cout<<ans<<endl;	
 
 
     }  

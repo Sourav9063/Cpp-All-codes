@@ -21,7 +21,19 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
-
+ll binpow(ll a, ll b)
+{
+    ll res = 1;
+    // a %= MOD;
+    while (b)
+    {
+        if (b & 1)
+            res = res * a;
+        a = a * a;
+        b >>= 1;
+    }
+    return res;
+}
 int main()
 {
     Sourav;
@@ -38,34 +50,20 @@ int main()
     {
         ll n, k;
         cin >> n >> k;
-        ll tmp = 1;
         ll ans = 0;
-        // if (k >= n)cout << ans << endl;
-        // else {
-        while ( tmp < n) {
-            if (tmp <= k)
-            {
-                tmp = tmp << 1;
-                ans++;
-
+        ll arr[n];
+        sarray(arr, arr + n);
+        k++;
+        for (ll i = 0;i < n - 1;i++) {
+            if (k > 0) {
+                ll tmp = binpow(10, arr[i + 1] - arr[i]) - 1;
+                ll tmpAns = min(tmp, k);
+                ans += binpow(10, arr[i]) * tmpAns;
+                k -= tmpAns;
             }
-            else {
-                ll tmpN = n - tmp;
-                ans += (tmpN + k - 1) / k;
-                break;
-            }
-            // deb(tmp)
         }
-        // deb(tmp)
-        // deb(ans)
-        //     deb(tmp)
-        // ll tmpn = n - tmp;
-        // // cout << floor(tmpn/k);
-        // ;
-
-
+        ans += k * binpow(10, arr[n - 1]);
         cout << ans;nl
-            // }
 
 
     }

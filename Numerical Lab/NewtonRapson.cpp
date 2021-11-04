@@ -22,11 +22,40 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
 template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<' ';nl/*sf("%d", st++);*/}
 
-unordered_map<char, ll> mp;
-string s, keyboard;
-ll ans = 0;
+//create a general polynominal function
+
+double coeff[100];
+int degree = 0;
+double fpoly(double x) {
+    double ans = 0;
+    for(int i=0; i<=degree; i++)
+        ans += coeff[i]*pow(x, i);
+    return ans;
+}
+// create a function that return the derivative of the polynominal function
+double fpoly_derivative(double x) {
+    double ans = 0;
+    for(int i=1; i<=degree; i++)
+        ans += coeff[i]*i*pow(x, i-1);
+    return ans;
+}
+
+double newton_raphson(double (*f)(double), double (*fp)(double), double a, double b, double eps, int n) {
+    double x1 = (a+b)/2;
+    double x2;
+    int k = 0;
+    while (abs(f(x1)) > eps&&k < n) {
+        x2 = x1 - f(x1)/fp(x1);
+        x1 = x2;
+        k++;
+    }
+    return x1;
+}
+
+
+
 int main()
-{
+      {
 Sourav;
 
  #ifndef ONLINE_JUDGE
@@ -34,27 +63,6 @@ Sourav;
             freopen("C:\\Users\\my_code\\output.in", "w", stdout);
  #endif
 
-
- ll t;
- cin>>t;
-    while(t--)
-    {
-      cin >> keyboard;
-      cin >> s;
-      
-      for (ll i = 0; i < keyboard.size(); i++)
-      { 
-        mp[keyboard[i]] = i;
-      }
-      ans = 0;
-      for (ll i = 1; i < s.size(); i++)
-      {
-        ans += abs(mp[s[i]] - mp[s[i - 1]]);
-      }
-      cout << ans;nl
-
-
-    }  
 
 
 

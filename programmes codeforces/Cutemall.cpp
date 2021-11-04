@@ -21,6 +21,24 @@ using namespace std;
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
+vector<int>graph[100010];
+bool vis[100010];
+vector<int>numOfEdge(100010, 1);
+
+void dfs(int ver) {
+    // cout << "init";   deb(ver);
+    vis[ver] = true;
+    for (auto child : graph[ver]) {
+        if (!vis[child]) {
+            dfs(child);
+            // deb(ver)deb(child);
+            // deb(numOfEdge[child])
+            numOfEdge[ver] += numOfEdge[child];
+        }
+    }
+
+}
+
 
 int main()
 {
@@ -30,45 +48,30 @@ int main()
     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
-
-
-    ll t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    for (size_t i = 0; i < n - 1; i++)
     {
-        ll n, k;
-        cin >> n >> k;
-        ll tmp = 1;
-        ll ans = 0;
-        // if (k >= n)cout << ans << endl;
-        // else {
-        while ( tmp < n) {
-            if (tmp <= k)
-            {
-                tmp = tmp << 1;
-                ans++;
-
-            }
-            else {
-                ll tmpN = n - tmp;
-                ans += (tmpN + k - 1) / k;
-                break;
-            }
-            // deb(tmp)
-        }
-        // deb(tmp)
-        // deb(ans)
-        //     deb(tmp)
-        // ll tmpn = n - tmp;
-        // // cout << floor(tmpn/k);
-        // ;
-
-
-        cout << ans;nl
-            // }
-
-
+        int u, v;
+        cin >> u >> v;
+        graph[u].pb(v);
+        graph[v].pb(u);
     }
+    ll ans = 0;
+
+    if (n % 2 == 1)cout << -1 << endl;
+    else {
+        for (size_t i = 1; i <= n; i++)
+        {
+            if (!vis[i])dfs(i);
+        }
+        for (int i = 2; i <= n; i++)
+        {
+            // deb(numOfEdge[i]);
+            if (numOfEdge[i] % 2 == 0)ans++;
+        }   cout << ans << endl;
+    }
+
 
 
 

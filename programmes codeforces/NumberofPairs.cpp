@@ -36,36 +36,20 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
-        ll tmp = 1;
+        ll n, l, r;
+        cin >> n >> l >> r;
+        ll arr[n];
+        sarray(arr, arr + n);
+        sort(arr, arr + n);
         ll ans = 0;
-        // if (k >= n)cout << ans << endl;
-        // else {
-        while ( tmp < n) {
-            if (tmp <= k)
-            {
-                tmp = tmp << 1;
-                ans++;
-
-            }
-            else {
-                ll tmpN = n - tmp;
-                ans += (tmpN + k - 1) / k;
-                break;
-            }
-            // deb(tmp)
+        for (ll i = 0; i < n; i++)
+        {
+            ll low = l - arr[i], high = r - arr[i];
+            auto righti = upper_bound(arr, arr + n, high), lefti = lower_bound(arr, arr + n, low);
+            if (arr[i] >= low && arr[i] <= high)ans--;
+            ans += righti - lefti;
         }
-        // deb(tmp)
-        // deb(ans)
-        //     deb(tmp)
-        // ll tmpn = n - tmp;
-        // // cout << floor(tmpn/k);
-        // ;
-
-
-        cout << ans;nl
-            // }
+        cout << ans /2 << endl;
 
 
     }

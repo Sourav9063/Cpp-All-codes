@@ -57,6 +57,31 @@ ll binExRec(ll a, ll b) {
     }
 }
 
+/////bin search  nth root element
+long double mult(long double x, long double n) {
+  long double res = 1;
+  while (n--) {
+    res *= x;
+    // deb(res)
+  }
+  
+  return res;
+
+}
+
+long double nthRoot(long double x, long double n) {
+  long double low = 1, high = x, mid;
+  while (high - low> 0.000000001) {
+    mid = (low + high) / 2;
+    if (mult(mid, n) < x) { low = mid; }
+    else { high = mid; }
+
+  }
+
+  return mid;
+
+}
+// ??????
 
 ///// dfs matrix
 unordered_map<int, bool>mpGraph[200010];

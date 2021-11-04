@@ -19,29 +19,87 @@ using namespace std;
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<' ';nl/*sf("%d", st++);*/}
+template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
+template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
 
 int main()
 {
-Sourav;
+    Sourav;
 
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-
-
-
-            cout << "helo";
+#ifndef ONLINE_JUDGE
+    freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+#endif
 
 
-  return 0;
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        ll arr[n];
+        // sarray(arr, arr + n);
+        // ll mx = -1,mxp=-1;
+        map<ll, ll, greater<ll>>mp;
+        // map <ll, ll>::iterator mpi;
+        unordered_map<ll,vector<ll>>mps;
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+            mp[arr[i]]++;
+            mps[arr[i]].pb(i+1);
+
+
+        }
+        // auto   mpi = mp.begin();
+        ll ans = 0;
+        for (auto mpi : mp) {
+         if (mps[mpi.first][0] < mpi.first) {
+             // cout << mpi.first - mps[mpi.first][0];nl
+             ans = max(ans, mpi.first - mps[mpi.first][0]);
+         }
+        }
+        cout<<ans<<endl;
+        // deb(mps[mpi->first][0])
+        // if (mps[mpi->first][0] < mpi->first) {
+        //     cout << mpi->first - mps[mpi->first][0];nl
+        // }
+        // else {
+        //     cout << 0;nl
+        // }
+
+        // ll tmp = -1;
+        // bool found = false;
+        // ll pre = 0;
+        // // for (ll i = n - 1; i >= 0; i--)
+        // // {
+        // //     if (arr[i] > i&&!found) {
+        // //         tmp = i ;
+        // //         found = true;
+        // //     }
+        // //     if (found) {
+        // //         pre++;
+        // //     }
+        // // }
+        // if (tmp == -1)cout << 0 << endl;
+        // else {
+        //     cout << arr[tmp] - pre << endl;
+        // }
+
+
+    }
+
+
+
+
+
+    return 0;
 }
 
 /*
   Documentation:
-   
+
 
 
 */
