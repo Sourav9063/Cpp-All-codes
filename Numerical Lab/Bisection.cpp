@@ -91,6 +91,13 @@ double bisection(double f(double), double low, double high, double eps, int n)
 }
 double bisection(double f(double))
 {
+    // Sourav
+    //      #ifndef ONLINE_JUDGE
+    //                 freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
+    //                 freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    //      #endif
+
+
     double low, high;
     double eps;
     int n;
