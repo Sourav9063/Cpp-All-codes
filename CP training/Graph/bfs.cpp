@@ -22,7 +22,28 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
 
+unordered_map<int, vector<int>>adj;
+int dis[100000];
+void bfs(int startNode) {
+  memset(dis, -1, sizeof(dis));
+  queue<int>q;
+  q.push(startNode);
+  dis[startNode] = 0;
+  while (!q.empty()) {
+    int u = q.front();
 
+    q.pop();
+    for (auto v : adj[u]) {
+      if (dis[v] == -1) {
+        dis[v] = dis[u] + 1;
+        q.push(v);
+
+      }
+
+    }
+  }
+
+}
 
 
 int main()
@@ -34,52 +55,49 @@ int main()
   freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-  unordered_map<char, int>mp;
-  mp['U'] = 1;
-  mp['D'] = -1;
-  mp['L'] = -1;
-  mp['R'] = 1;
+
   ll t;
   cin >> t;
-  while (t--)
+  for (int j = 1;j <= t;j++)
   {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    int x = 0, y = 0;
-    bool ans = false;
+
+    int n, e;
+    cin >> n >> e;
+    adj.clear();
+    for (int i = 0; i < e; i++)
+    {
+      int u, v;
+      cin >> u >> v;
+      adj[u].pb(v);
+      adj[v].pb(u);
+    }
+    int s, d;
+    cin >> s >> d;
+    bfs(s);
+    // cout << dis[d] << "\n";
+    int tmp[n];
+    int node = 0;
     for (int i = 0; i < n; i++)
     {
-      if (s[i] == 'U')
-        y += mp[s[i]];
-      else if (s[i] == 'D')
-        y += mp[s[i]];
-      else if (s[i] == 'L')
-        x += mp[s[i]];
-      else if (s[i] == 'R')
-        x += mp[s[i]];
-
-      if (x == 1 && y == 1)
-      {
-        ans = true;
-        break;
-      }
+      // tmp.pb(dis[i]);
+      // cout << dis[i] << " ";
+      tmp[i] = dis[i];
 
     }
 
-    if (ans)
-      cout << "YES" << endl;
-    else
-      cout << "NO" << endl;
+    // memset(dis, -1, sizeof(dis));
+    bfs(d);
+    int ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+      ans = max(ans, dis[i] + tmp[i]);
+    }
 
+    cout << "Case " << j << ": " << ans << "\n";
 
 
 
   }
-
-
-
 
 
 

@@ -19,42 +19,47 @@ using namespace std;
 #define Sourav ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
-template <class T>inline void sarray(T* st, T* nd){while(st<nd)cin>>*st++;/*sf("%d", st++);*/}
-template <class T>inline void parray(T* st, T* nd){while(st<nd)cout<<*st++<<' ';nl/*sf("%d", st++);*/}
+template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
+template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
 
-unordered_map<char, ll> mp;
-string s, keyboard;
-ll ans = 0;
 int main()
 {
-Sourav;
+  Sourav;
 
- #ifndef ONLINE_JUDGE
-            freopen("C:\\Users\\my_code\\input.in", "r", stdin); 
-            freopen("C:\\Users\\my_code\\output.in", "w", stdout);
- #endif
-
-
- ll t;
- cin>>t;
-    while(t--)
-    {
-      cin >> keyboard;
-      cin >> s;
-      
-      for (ll i = 0; i < keyboard.size(); i++)
-      { 
-        mp[keyboard[i]] = i;
-      }
-      ans = 0;
-      for (ll i = 1; i < s.size(); i++)
-      {
-        ans += abs(mp[s[i]] - mp[s[i - 1]]);
-      }
-      cout << ans;nl
+#ifndef ONLINE_JUDGE
+  freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+  freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+#endif
 
 
-    }  
+  ll t;
+  unordered_map<char, int> mp;
+  //codeforces
+  mp['c'] = 1;
+  mp['o'] = 1;
+  mp['d'] = 1;
+  mp['e'] = 1;
+  mp['f'] = 1;
+  mp['o'] = 1;
+  mp['r'] = 1;
+  mp['c'] = 1;
+  mp['e'] = 1;
+  mp['s'] = 1;
+
+
+  cin >> t;
+  while (t--)
+  {
+    char ch;
+    cin >> ch;
+    if (mp[ch] > 0)
+      cout << "YES" << "\n";
+    else
+      cout << "NO" << "\n";
+
+
+  }
+
 
 
 
@@ -65,7 +70,7 @@ Sourav;
 
 /*
   Documentation:
-   
+
 
 
 */

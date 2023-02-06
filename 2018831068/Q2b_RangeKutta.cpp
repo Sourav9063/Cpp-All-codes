@@ -65,6 +65,7 @@ double rangaKutta2ndWithStep(double (*f)(double, double), double y0, double x0, 
 
         }
     }
+    return y[n];
 }
 double rangaKutta2ndWithStepSize(double (*f)(double, double), double y0, double x0, double x1, double h, double* y, double* x)
 {
@@ -72,11 +73,11 @@ double rangaKutta2ndWithStepSize(double (*f)(double, double), double y0, double 
     int n = ceil((x1 - x0) / h);
 
 
-        y[0] = y0;
-        x[0] = x0;
-        double check = 1000000.0;
-        double ans = 10000.0;
-        for (int i = 1; i <= n; i++)
+    y[0] = y0;
+    x[0] = x0;
+    double check = 1000000.0;
+    double ans = 10000.0;
+    for (int i = 1; i <= n; i++)
     {
         k1 = h * f(x[i - 1], y[i - 1]);
         k2 = h * f(x[i - 1] + h, y[i - 1] + k1);
@@ -97,15 +98,15 @@ double rangaKutta2ndWithStepSize(double (*f)(double, double), double y0, double 
 
 int main()
 {
-//     Sourav;
+    //     Sourav;
 
-// #ifndef ONLINE_JUDGE
-//     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
-//     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("C:\\Users\\my_code\\input.in", "r", stdin);
+    //     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
+    // #endif
     double x[1001], y[1001];
     cout << rangaKutta2ndWithStep(func, 1.2, 1, 1.1, 1, y, x);nl
-    cout << rangaKutta2ndWithStepSize(func, 1.2, 1, 1.1, 0.02, y, x);nl
+        cout << rangaKutta2ndWithStepSize(func, 1.2, 1, 1.1, 0.02, y, x);nl
 
 
 

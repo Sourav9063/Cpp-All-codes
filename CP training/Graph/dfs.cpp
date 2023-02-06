@@ -22,6 +22,27 @@ using namespace std;
 template <class T>inline void sarray(T* st, T* nd) { while (st < nd)cin >> *st++;/*sf("%d", st++);*/ }
 template <class T>inline void parray(T* st, T* nd) { while (st < nd)cout << *st++ << ' ';nl/*sf("%d", st++);*/ }
 
+unordered_map<int, vector<int>>adj;
+bool vis[100005];
+
+
+void dfs(int u, int p) {
+    for (int v : adj[u]) {
+        if (v == p) continue;
+        dfs(v, u);
+    }
+
+}
+
+
+void dfs(int u) {
+    vis[u] = true;
+    for (int v : adj[u]) {
+        if (vis[v]) continue;
+        dfs(v);
+    }
+}
+
 int main()
 {
     Sourav;
@@ -31,35 +52,16 @@ int main()
     freopen("C:\\Users\\my_code\\output.in", "w", stdout);
 #endif
 
-
-    ll t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        string s;
-        cin >> s;
-        int cnt = 0;
-        for (int i = 0; i < n / 2; i++)
-        {
-            // cout << "HI";
-            // deb(s[i]);
-            // deb(s[n - i - 1]);
-            if (s[i] != s[n - i - 1])
-            {
-                cnt++;
-
-            }
-            else {
-                break;
-            }
-        }
-
-        cout << n - cnt * 2 << endl;
-
-
+    int n, e;
+    cin >> n >> e;
+    for (int i = 0; i < e; i++) {
+        int u, v;
+        cin >> u >> v;
+        
+        adj[u].pb(v);
+        adj[v].pb(u);
     }
+
 
 
 

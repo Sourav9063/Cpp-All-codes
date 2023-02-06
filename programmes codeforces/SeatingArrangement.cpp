@@ -24,13 +24,13 @@ using namespace std;
 
 //template<typename... T>void read(T&... args) {((cin >> args), ...);}
 template <class T>
-inline void sarray(T *st, T *nd)
+inline void sarray(T* st, T* nd)
 {
     while (st < nd)
         cin >> *st++; /*sf("%d", st++);*/
 }
 template <class T>
-inline void parray(T *st, T *nd)
+inline void parray(T* st, T* nd)
 {
     while (st < nd)
         cout << *st++ << ' ';
@@ -53,52 +53,52 @@ int main()
     ll q;
     cin >> q;
     priority_queue<ll> pq;
-    map<ll, pair<ll,pair<ll,ll>>> mp;
+    map<ll, pair<ll, pair<ll, ll>>> mp;
     pq.push(n);
-    for (ll i = 1; i <=k; i++)
+    for (ll i = 1; i <= k; i++)
     {
         ll tmp = pq.top();
         pq.pop();
         if (tmp % 2 == 0)
         {
-            if (s[i-1] == 'R')
+            if (s[i - 1] == 'R')
             {
-              int tmp2 = mp[tmp / 2+1].first;
-              if(tmp2 ==0){
-                //    mp[tmp / 2+1]={i,{}}
-                // ToDo::
-              }
+                int tmp2 = mp[tmp / 2 + 1].first;
+                if (tmp2 == 0) {
+                    //    mp[tmp / 2+1]={i,{}}
+                    // ToDo::
+                }
 
-                pq.push(tmp/2);
-                pq.push(tmp/2-1);
+                pq.push(tmp / 2);
+                pq.push(tmp / 2 - 1);
             }
             else
             {
-                
-                mp[tmp / 2]=i;
-                pq.push(tmp/2);
-                pq.push(tmp/2-1);
+
+                mp[tmp / 2] = i;
+                pq.push(tmp / 2);
+                pq.push(tmp / 2 - 1);
             }
         }
-        else{
-            
-            mp[tmp / 2+1] = i;
+        else {
+
+            mp[tmp / 2 + 1] = i;
             // deb(tmp/2)
-            pq.push(tmp/2);
-            pq.push(tmp/2);
+            pq.push(tmp / 2);
+            pq.push(tmp / 2);
         }
 
 
     }
 
-for (ll i = 0; i < q; i++)
-{
+    for (ll i = 0; i < q; i++)
+    {
 
-    ll tmp;
-    cin >> tmp;
-    ll tmpans = mp[tmp];
-    cout << (tmpans==0 ? -1:mp[tmp])<< endl;
-}
+        ll tmp;
+        cin >> tmp;
+        ll tmpans = mp[tmp];
+        cout << (tmpans == 0 ? -1 : mp[tmp]) << endl;
+    }
 
 
 
@@ -107,7 +107,7 @@ for (ll i = 0; i < q; i++)
 
 /*
   Documentation:
-   
+
 
 
 */

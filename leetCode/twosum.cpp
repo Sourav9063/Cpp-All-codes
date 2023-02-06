@@ -32,35 +32,6 @@ int main()
 #endif
 
 
-    ll t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        string s;
-        cin >> s;
-        int cnt = 0;
-        for (int i = 0; i < n / 2; i++)
-        {
-            // cout << "HI";
-            // deb(s[i]);
-            // deb(s[n - i - 1]);
-            if (s[i] != s[n - i - 1])
-            {
-                cnt++;
-
-            }
-            else {
-                break;
-            }
-        }
-
-        cout << n - cnt * 2 << endl;
-
-
-    }
-
 
 
 

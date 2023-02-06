@@ -33,7 +33,7 @@ int main()
      cin>>t;
         while(t--)
         {
-          lli n,k;
+          lli n, k;
 cin>>n>>k;
 
            cout<<k+(k-1)/(n-1)<<endl;  

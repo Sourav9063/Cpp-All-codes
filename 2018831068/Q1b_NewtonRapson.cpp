@@ -49,6 +49,9 @@ double fpoly_derivative(double x) {
   return ans;
 }
 
+double defivative(double (*f)(double),double x) {
+  return (f(x + 0.000001) - f(x)) / 0.000001;
+}
 
 
 double newton_raphson(double (*f)(double), double (*fp)(double), double a, double b, double eps, int n) {
@@ -104,7 +107,9 @@ int main()
     cout << "Enter the coeffecients\n";
     for (int i = degree; i >= 0; i--)
       cin >> coeff[i];
-    newton_raphson();
+    // newton_raphson();
+    cout << fpoly_derivative(10) << endl;
+    cout << defivative(fpoly, 10) << endl;
   }
 
 

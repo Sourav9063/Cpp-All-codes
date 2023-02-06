@@ -46,7 +46,8 @@ void seive()
         if (isPrime[p])
         {
             vPrime.pb(p);
-            // cout << p << endl;
+            if(p%100==91)
+            cout << p << endl;
         }
     }
 }
@@ -62,12 +63,12 @@ int main()
 
     seive();
 // deb(isPrime[997])
-    for (size_t i = 0; i < 1000; i++)
-    {
-        ll tmp;
-        cin >> tmp;
-        if (!isPrime[tmp]||vPrime[i]!=tmp) { cout << tmp;nl }
-    }
+    // for (size_t i = 0; i < 1000; i++)
+    // {
+    //     ll tmp;
+    //     cin >> tmp;
+    //     if (!isPrime[tmp]||vPrime[i]!=tmp) { cout << tmp;nl }
+    // }
 
 
 

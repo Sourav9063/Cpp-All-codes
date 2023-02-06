@@ -26,7 +26,7 @@ double a = 0, b = 0, c = 0, d = 0;
 ll degree = 0;
 double coeff[100];
 double binPow(double x, ll n) {
-    double res = 1;
+    double res = 1; 
     while (n) {
         if (n & 1)res *= x;
         x *= x;
